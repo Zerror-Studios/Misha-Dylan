@@ -115,14 +115,14 @@ export default function TravelTips() {
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className="border-b border-[#55130121] pb-6 group relative"
+              className="border-b border-[#173e3d21] pb-6 group relative"
             >
               {/* BUTTON */}
               <button
                 onClick={() => toggleFAQ(faq.id)}
                 className="group w-full flex items-center justify-between text-left"
               >
-                <span className="tracking-wide uppercase COLOR_TEXT_RED Font_YV text-[1.5rem] max-sm:text-[1.1rem] md:text-base">
+                <span className="tracking-wide font-semibold uppercase COLOR_TEXT_RED Font_YV text-[1.5rem] max-sm:text-[1.1rem] md:text-base">
                   {faq.question}
                 </span>
 
@@ -132,12 +132,13 @@ export default function TravelTips() {
                     openId === faq.id ? "rotate-45" : ""
                   }`}
                 >
-                  <img
+                  {/* <img
                     src="/svgs/IconPlusnew.svg"
                     alt="icon"
                     className="absolute inset-0 w-full h-full"
                   />
-                  <span className="absolute inset-0 m-auto w-[7px] h-[7px] COLOR_BG_CREAM" />
+                  <span className="absolute inset-0 m-auto w-[7px] h-[7px] COLOR_BG_CREAM" /> */}
+                  +
                 </span>
               </button>
 
@@ -152,7 +153,7 @@ export default function TravelTips() {
                       : "0px",
                 }}
               >
-                <div className="mt-4 Font_YV text-[18px] text-[#551301a4]">
+                <div className="mt-4 Font_YV text-[18px] text-[#173e3d]">
                   {faq.answer}
 
                   {(faq.id === 14 || faq.id === 15) && (
@@ -178,7 +179,7 @@ export default function TravelTips() {
               </div>
 
               {/* HOVER LINE */}
-              <div className="w-0 h-px bg-[#C53D2E] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#173e3d] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
             </div>
           ))}
         </div>

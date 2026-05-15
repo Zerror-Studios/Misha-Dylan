@@ -12,8 +12,9 @@
 
 @font-face {
   font-family: Font_YIV;
-  src: url('/fonts/final/Parfumerie-Script-Regular.woff2');
+  src: url('/fonts/latestFont/CheltenhamStdLight.otf');
 }
+/* src: url('/fonts/final/Parfumerie-Script-Regular.woff2'); */
 
 /* @font-face {
   font-family: Font_YV;
@@ -25,7 +26,7 @@ body {
   position: relative;
   font-family: Helvetica;
   scroll-behavior: smooth;
-  background-color: #F6F5F1;
+  background-color: #f9de85;
 }
 
 .Font_MLD {
@@ -35,8 +36,9 @@ body {
 
 @font-face {
   font-family: Font_Q;
-  src: url('/fonts/custom_new_fonts/NtVoyager.otf');
+  src:url('/fonts/latestFont/CheltenhamStdBook.otf');
 }
+/* src: url('/fonts/custom_new_fonts/NtVoyager.otf'); */
 
 .Font_Q {
   font-family: Font_Q;
@@ -49,8 +51,9 @@ body {
 
 @font-face {
   font-family: Font_YV;
-  src: url('/fonts/custom_new_fonts/ClagioR.otf');
+  src: url('/fonts/latestFont/CheltenhamStdLight.otf');
 }
+/* src: url('/fonts/custom_new_fonts/ClagioR.otf'); */
 
 .Font_YV {
   font-family: Font_YV;
@@ -95,10 +98,10 @@ p {
 
 /* OLD color ----------------------------- */
 .COLOR_BG_RED{
-  background-color: #C53D2E;
+  background-color: #173e3d;
 }
 .COLOR_TEXT_RED{
-  color: #C53D2E;
+  color: #173e3d;
 }
 
 
@@ -113,70 +116,56 @@ p {
   color: #F6F5F1;
 }
 .COLOR_BG_CREAM{
-  background-color: #F6F5F1;
+  background-color: #f9de85;
 }
 
-
-/* 
-
-label{
- display:flex;
-  flex-direction:column;
-  width:70px;
-  cursor:pointer;
+.noise:before {
+  animation: noise 1s steps(2) infinite;
+  background-image: url("/FinalImage/noise2.jpg");
+  content: "";
+  height: calc(100% + 20rem);
+  left: -10rem;
+  opacity: 0.2;
+  pointer-events: none;
+  position: absolute;
+  top: -10rem;
+  width: calc(100% + 20rem);
 }
-
-label span{
-  background: #5e2222;
-  border-radius:10px;
-  height:7px;
-  margin: 7px 0;
-  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
-
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 9rem, 0);
+  }
+  10% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+  20% {
+    transform: translate3d(-8rem, 2rem, 0);
+  }
+  30% {
+    transform: translate3d(9rem, -9rem, 0);
+  }
+  40% {
+    transform: translate3d(-2rem, 7rem, 0);
+  }
+  50% {
+    transform: translate3d(-9rem, -4rem, 0);
+  }
+  60% {
+    transform: translate3d(2rem, 6rem, 0);
+  }
+  70% {
+    transform: translate3d(7rem, -8rem, 0);
+  }
+  80% {
+    transform: translate3d(-9rem, 1rem, 0);
+  }
+  90% {
+    transform: translate3d(6rem, -5rem, 0);
+  }
+  100% {
+    transform: translate3d(-7rem, 0, 0);
+  }
 }
-
-
-span:nth-of-type(1){
-  width:50%;
-  
-}
-
-span:nth-of-type(2){
-  width:100%;
-}
-
-
-span:nth-of-type(3){
-  width:75%;
- 
-}
-
-
-input[type="checkbox"]{
-  display:none;
-}
-
-
-input[type="checkbox"]:checked ~ span:nth-of-type(1){
-  transform-origin:bottom;
-  transform:rotatez(45deg) translate(8px,0px)
-}
-
-
-input[type="checkbox"]:checked ~ span:nth-of-type(2){
-  
-  transform-origin:top;
-  transform:rotatez(-45deg)
-}
-
-
-input[type="checkbox"]:checked ~ span:nth-of-type(3){
-  
-  transform-origin:bottom;
-  width:50%;
-  transform: translate(30px,-11px) rotatez(45deg);
-
-} */
 
 .button {
   line-height: 1;
@@ -258,4 +247,11 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3){
 
 .img3d-wrapper {
   perspective: 800px;
+}
+
+
+
+/* -----------==------------------------------------------------------------------------------------------ */
+.bgFirst{
+  background-color: #f9de85;
 }

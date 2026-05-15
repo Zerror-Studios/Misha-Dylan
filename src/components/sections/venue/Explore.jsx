@@ -303,7 +303,7 @@ const SECTIONS = [
   // ── PLACES TO VISIT ──
   {
     type: "image-wide",
-    src: "/all_new_images/expF/a1.jpg",
+    src: "/FinalImage/exploreFlorence/a1.jpg",
     alt: "Florence Cathedral",
   },
   {
@@ -315,12 +315,12 @@ const SECTIONS = [
   },
   {
     type: "image-portrait",
-    src: "/all_new_images/expF/a2.jpg",
+    src: "/FinalImage/exploreFlorence/a2.jpg",
     alt: "Duomo detail",
   },
   {
     type: "image-wide",
-    src: "/all_new_images/expF/b1.jpg",
+    src: "/FinalImage/exploreFlorence/b1.jpg",
     alt: "Uffizi Gallery",
     animate: true,
   },
@@ -334,13 +334,13 @@ const SECTIONS = [
   },
   {
     type: "image-portrait",
-    src: "/all_new_images/expF/b2.jpg",
+    src: "/FinalImage/exploreFlorence/b2.jpg",
     alt: "Ponte Vecchio",
     animate: true,
   },
   {
     type: "image-wide",
-    src: "/all_new_images/expF/c1.jpg",
+    src: "/FinalImage/exploreFlorence/c1.jpg",
     alt: "Piazzale Michelangelo",
     animate: true,
   },
@@ -354,13 +354,13 @@ const SECTIONS = [
   },
   {
     type: "image-full",
-    src: "/all_new_images/expF/c2.jpg",
+    src: "/FinalImage/exploreFlorence/c2.jpg",
     alt: "Boboli Gardens",
     animate: true,
   },
   {
     type: "image-wide",
-    src: "/all_new_images/expF/d1.jpg",
+    src: "/FinalImage/exploreFlorence/d1.jpg",
     alt: "Pitti Palace",
     animate: true,
   },
@@ -374,14 +374,14 @@ const SECTIONS = [
   },
   {
     type: "image-portrait",
-    src: "/all_new_images/expF/d2.jpg",
+    src: "/FinalImage/exploreFlorence/d2.jpg",
     alt: "Basilica of Santa Croce",
     animate: true,
   },
   // ── TOURS & EXPERIENCES ──
   {
     type: "image-wide",
-    src: "/all_new_images/expF/e1.jpg",
+    src: "/FinalImage/exploreFlorence/e1.jpg",
     alt: "Chianti Wine Region",
     animate: true,
   },
@@ -395,13 +395,13 @@ const SECTIONS = [
   },
   {
     type: "image-portrait",
-    src: "/all_new_images/expF/e2.jpg",
+    src: "/FinalImage/exploreFlorence/e2.jpg",
     alt: "Pisa",
     animate: true,
   },
   {
     type: "image-wide",
-    src: "/all_new_images/expF/f1.jpg",
+    src: "/FinalImage/exploreFlorence/f1.jpg",
     alt: "Siena",
     animate: true,
   },
@@ -415,7 +415,7 @@ const SECTIONS = [
   },
   {
     type: "image-full",
-    src: "/all_new_images/expF/f2.jpg",
+    src: "/FinalImage/exploreFlorence/f2.jpg",
     alt: "Tuscan Cooking Class",
     animate: true,
   },
@@ -593,7 +593,7 @@ const IntroPanel = () => (
           height={1000}
           alt="Florence"
         /> */}
-        <img src={`/all_new_images/expF/EXP1.webp`} className="w-full h-full object-cover object-center scale-[1.2]" alt="IMG" />
+        <img src={`/FinalImage/exploreFlorence/EXP1.webp`} className="w-full h-full object-cover object-center scale-[1.2]" alt="IMG" />
       </div>
     </div>
 
@@ -644,7 +644,7 @@ const IntroPanel = () => (
           alt="Florence"
         /> */}
 
-         <img src={`/all_new_images/expF/EXP2.webp`} className="w-full h-full object-cover object-center" alt="IMG" />
+         <img src={`/FinalImage/exploreFlorence/EXP2.webp`} className="w-full h-full object-cover object-center" alt="IMG" />
 
       </div>
     </div>
@@ -767,13 +767,13 @@ const TipPanel = () => (
   <div className="animate_child w-[60vw] h-screen flex justify-center items-center px-[6vw]">
     <div className="w-fit max-w-[560px] flex flex-col gap-6 items-center text-center">
       {/* Ornament */}
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      {/* <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <rect x="13" y="0" width="6" height="6" fill="#C53D2E" fillOpacity="0.3" transform="rotate(45 16 3)" />
         <rect x="13" y="13" width="6" height="6" fill="#C53D2E" fillOpacity="0.15" transform="rotate(45 16 16)" />
         <rect x="13" y="26" width="6" height="6" fill="#C53D2E" fillOpacity="0.3" transform="rotate(45 16 29)" />
-      </svg>
+      </svg> */}
 
-      <p className="text-[11px] tracking-[0.4em] uppercase Font_YV COLOR_TEXT_RED ">
+      <p className="text-[14px] tracking-[0.4em] uppercase Font_YV COLOR_TEXT_RED ">
         Tip for Guests
       </p>
 

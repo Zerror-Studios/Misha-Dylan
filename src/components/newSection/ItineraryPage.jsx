@@ -138,12 +138,12 @@ export default function ItineraryPage() {
   return (
     <div
       ref={containerRef}
-      className="Font_Q pt-[10vh]  "
+      className="Font_Q pt-[10vh] COLOR_BG_CREAM "
       style={{
-        backgroundColor: "#F6F5F1",
+        // backgroundColor: "#F6F5F1",
         minHeight: "100vh",
         // fontFamily: "'Montserrat', sans-serif",
-        color: "#C53D2E",
+        color:"#173e3d",
         overflow: "hidden",
       }}
     >
@@ -180,10 +180,10 @@ export default function ItineraryPage() {
           <span
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: 11,
+              fontSize: 14,
               letterSpacing: "0.35em",
               textTransform: "uppercase",
-              color: "#C53D2E",
+              color:"#173e3d",
               fontWeight: 500,
             }}
           >
@@ -203,7 +203,7 @@ export default function ItineraryPage() {
             letterSpacing: "-0.01em",
             lineHeight: 0.9,
             margin: 0,
-            color: "#C53D2E",
+            color:"#173e3d",
           }}
         >
           The Itinerary
@@ -222,11 +222,11 @@ export default function ItineraryPage() {
         >
           <p
             style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: 12,
+              // fontFamily: "'Montserrat', sans-serif",
+              fontSize: 16,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              color: "#C53D2E",
+              color:"#173e3d",
               opacity: 0.6,
               margin: 0,
               fontWeight: 300,
@@ -240,10 +240,10 @@ export default function ItineraryPage() {
           <p
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: 12,
+              fontSize: 16,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              color: "#C53D2E",
+              color:"#173e3d",
               opacity: 0.6,
               margin: 0,
               fontWeight: 300,
@@ -260,7 +260,7 @@ export default function ItineraryPage() {
           ref={lineRef}
           style={{
             height: 1,
-            backgroundColor: "#C53D2E",
+            backgroundcolor:"#173e3d",
             opacity: 0.2,
             transformOrigin: "left center",
           }}
@@ -310,7 +310,7 @@ export default function ItineraryPage() {
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: 22,
             fontStyle: "italic",
-            color: "#C53D2E",
+            color:"#173e3d",
             opacity: 0.5,
           }}
         >
@@ -322,7 +322,7 @@ export default function ItineraryPage() {
             fontSize: 10,
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#C53D2E",
+            color:"#173e3d",
             opacity: 0.4,
           }}
         >
@@ -366,7 +366,7 @@ const EventCard = forwardRef(function EventCard({ event, idx, isHovered, onHover
         //   fontFamily: "'Cormorant Garamond', serif",
           fontSize: "clamp(120px, 18vw, 220px)",
           fontWeight: 300,
-          color: "#C53D2E",
+          color:"#173e3d",
           opacity: 0.07,
           lineHeight: 1,
           userSelect: "none",
@@ -414,7 +414,7 @@ function DateBlock({ event, isHovered, alignRight }) {
           fontSize: 13,
           fontStyle: "italic",
           letterSpacing: "0.15em",
-          color: "#C53D2E",
+          color:"#173e3d",
           opacity: 0.5,
           marginBottom: 12,
           transition: "opacity 0.3s",
@@ -432,7 +432,7 @@ function DateBlock({ event, isHovered, alignRight }) {
           fontSize: "clamp(38px, 5vw, 58px)",
           fontWeight: 300,
           lineHeight: 1,
-          color: "#C53D2E",
+          color:"#173e3d",
           textAlign: alignRight ? "right" : "left",
         }}
       >
@@ -450,7 +450,7 @@ function DateBlock({ event, isHovered, alignRight }) {
           fontSize: 10,
           letterSpacing: "0.35em",
           textTransform: "uppercase",
-          color: "#C53D2E",
+          color:"#173e3d",
           opacity: 0.4,
           marginTop: 10,
           fontWeight: 400,
@@ -465,7 +465,7 @@ function DateBlock({ event, isHovered, alignRight }) {
           marginTop: 16,
           height: 1,
           width: isHovered ? "100%" : "30%",
-          backgroundColor: "#C53D2E",
+          backgroundcolor:"#173e3d",
           opacity: 0.3,
           transition: "width 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
           alignSelf: alignRight ? "flex-end" : "flex-start",
@@ -500,7 +500,7 @@ function ContentBlock({ event, isHovered, alignRight }) {
           letterSpacing: "-0.01em",
           lineHeight: 1.05,
           margin: "0 0 20px",
-          color: "#C53D2E",
+          color:"#173e3d",
           transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
           transform: isHovered ? "translateX(8px)" : "translateX(0)",
         }}
@@ -525,9 +525,9 @@ function ContentBlock({ event, isHovered, alignRight }) {
               className="Font_Q"
                 style={{
                 //   fontFamily: "'Montserrat', sans-serif",
-                  fontSize: 11,
+                  fontSize: 14,
                   letterSpacing: "0.2em",
-                  color: "#C53D2E",
+                  color:"#173e3d",
                   opacity: 0.5,
                   fontWeight: 500,
                 }}
@@ -539,7 +539,7 @@ function ContentBlock({ event, isHovered, alignRight }) {
                   width: 3,
                   height: 3,
                   borderRadius: "50%",
-                  backgroundColor: "#C53D2E",
+                  backgroundcolor:"#173e3d",
                   opacity: 0.4,
                 }}
               />
@@ -549,7 +549,7 @@ function ContentBlock({ event, isHovered, alignRight }) {
                 //   fontFamily: "'Cormorant Garamond', serif",
                   fontSize: 18,
                   fontStyle: "italic",
-                  color: "#C53D2E",
+                  color:"#173e3d",
                   opacity: 0.85,
                 }}
               >
@@ -572,9 +572,9 @@ function ContentBlock({ event, isHovered, alignRight }) {
           <span
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: 12,
+              fontSize: 16,
               letterSpacing: "0.25em",
-              color: "#C53D2E",
+              color:"#173e3d",
               opacity: 0.6,
               fontWeight: 400,
             }}
@@ -612,10 +612,10 @@ function ContentBlock({ event, isHovered, alignRight }) {
         <span
           style={{
             fontFamily: "'Montserrat', sans-serif",
-            fontSize: 11,
+            fontSize: 14,
             letterSpacing: "0.25em",
             textTransform: "uppercase",
-            color: "#C53D2E",
+            color:"#173e3d",
             fontWeight: 500,
           }}
         >
@@ -627,9 +627,9 @@ function ContentBlock({ event, isHovered, alignRight }) {
       <p
         style={{
           fontFamily: "'Montserrat', sans-serif",
-          fontSize: 11,
+          fontSize: 14,
           letterSpacing: "0.05em",
-          color: "#C53D2E",
+          color:"#173e3d",
           opacity: 0.45,
           margin: 0,
           fontWeight: 300,

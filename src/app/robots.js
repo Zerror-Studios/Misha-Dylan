@@ -6,6 +6,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://www.sonalskushie.com/sitemap.xml",
+    sitemap: "https://www.MishaAndDylan.com/sitemap.xml",
   };
 }

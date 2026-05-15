@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://www.sonalskushie.com/";
+  const baseUrl = "";
 
   return [
     {

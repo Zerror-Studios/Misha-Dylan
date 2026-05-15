@@ -7,15 +7,15 @@ import { useEffect, useRef, useState } from "react";
 // <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 // ─────────────────────────────────────────────────────────────────────────────
 
-const ACCENT = "#C53D2E";
-const BG = "#F6F5F1";
+const ACCENT = "#173e3d";
+const BG = "#f9de85";
 
 // Curated Unsplash images for Florence / wedding travel
-const HERO_IMG = `/all_new_images/travelaccommodation/IMG1.jpg`; // Florence panorama
-const VISA_IMG = "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?w=900&q=80"; // passport/travel docs
-const TRANSPORT_IMG = "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=900&q=80"; // train/travel
-const HOTEL_IMG = "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80"; // luxury hotel room
-const BAGGAGE_IMG = "https://images.unsplash.com/photo-1553531889-56cc480ac5cb?w=900&q=80"; // luggage
+const HERO_IMG = `/FinalImage/15.webp`; // Florence panorama
+const VISA_IMG = "/FinalImage/20.webp"; // passport/travel docs
+const TRANSPORT_IMG = "/FinalImage/41.webp"; // train/travel
+const HOTEL_IMG = "/FinalImage/30.webp"; // luxury hotel room
+const BAGGAGE_IMG = "/FinalImage/37.webp"; // luggage
 
 const sections = [
   { id: "visa", label: "Visa" },
@@ -122,21 +122,21 @@ export default function Travelaccommodation() {
       <div ref={heroRef} style={{ position: "relative", height: "100svh", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <img className="hero-img"
           src={HERO_IMG} alt="Florence"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "115%", objectFit: "cover", objectPosition: "center",  }}
+          style={{ position: "absolute", inset: 2, width: "100%", height: "115%", objectFit: "cover", objectPosition: "center",  filter: "brightness(0.6)", }}
         />
         <div className="hero-content " style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 24px" }}>
-          <p  className="Font_Q text-white"  style={{  fontSize: 11, letterSpacing: "0.4em", textTransform: "uppercase", marginBottom: 20 }}>
+          {/* <p  className="Font_Q text-white"  style={{  fontSize: 14, letterSpacing: "0.4em", textTransform: "uppercase", marginBottom: 20 }}>
             Florence, Italy · September 2026
-          </p>
-          <h1  className="Font_Q COLOR_TEXT_RED" style={{  fontSize: "clamp(44px, 9vw, 112px)", fontWeight: 700, lineHeight: 0.95, margin: 0 }}>
+          </p> */}
+          <h1  className="Font_Q text-white" style={{  fontSize: "clamp(44px, 9vw, 112px)", fontWeight: 700, lineHeight: 0.95, margin: 0 }}>
             Travel & <br />Accommodation
           </h1>
-          <p  className="Font_YV text-white" style={{ marginTop: 28, fontSize: "clamp(13px, 2vw, 16px)", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.7, fontWeight: 300 }}>
+          <p  className="Font_YV text-white" style={{ marginTop: 28, fontSize: "clamp(13px, 2vw, 18px)", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.7, fontWeight: 300 }}>
             We are delighted to welcome you to Florence to celebrate with us. Below you will find useful information to help plan your travel and stay.
           </p>
           {/* Scroll cue */}
           <div style={{ marginTop: 56, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-            <span  className="Font_Q text-white" style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase" }}>Scroll</span>
+            <span  className="Font_Q text-white leading-[14px]" style={{ fontSize: 14, letterSpacing: "0.3em", textTransform: "uppercase" }}>Scroll</span>
             <div style={{ width: 1, height: 40, backgroundColor: "white", animation: "pulse 2s infinite" }} />
           </div>
         </div>
@@ -457,7 +457,7 @@ function HotelCard({ hotel, index }) {
           transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
           cursor: "pointer",
         }}>
-        <p  className="Font_YV" style={{ fontSize: 10, letterSpacing: "0.3em", color: hovered ? "rgba(246,245,241,0.5)" : "rgba(197,61,46,0.35)", margin: "0 0 10px" }}>
+        <p  className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.3em", color: hovered ? "rgba(246,245,241,0.5)" : "rgba(197,61,46,0.35)", margin: "0 0 10px" }}>
           {String(index).padStart(2, "0")}
         </p>
         <p  className="Font_YV" style={{ fontSize: 16,  color: hovered ? BG : ACCENT, margin: 0, lineHeight: 1.4 }}>
@@ -489,7 +489,7 @@ const listStyle = {
 
 const liStyle = {
 //   fontFamily: "'DM Sans', sans-serif",
-  fontSize: "clamp(13px, 1.5vw, 15px)",
+  fontSize: "clamp(13px, 1.5vw, 16px)",
   color: ACCENT,
   opacity: 0.7,
   lineHeight: 1.75,
@@ -500,7 +500,7 @@ const liStyle = {
 
 const bodyStyle = {
 //   fontFamily: "'DM Sans', sans-serif",
-  fontSize: "clamp(13px, 1.5vw, 15px)",
+  fontSize: "clamp(13px, 1.5vw, 16px)",
   color: ACCENT,
 //   opacity: 0.65,
   lineHeight: 1.8,

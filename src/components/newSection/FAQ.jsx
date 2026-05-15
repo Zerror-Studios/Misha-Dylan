@@ -110,7 +110,7 @@ export default function FAQ() {
              <a href="mailto:sonalskushie@gmail.com" >
               <div className=" relative group flex flex-col max-sm:mt-2">
               <p className="Font_YV ">mishadylan@gmail.com</p>
-              <div className="w-0 h-px bg-[#551301]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#173e3d]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>
 
@@ -119,14 +119,14 @@ export default function FAQ() {
             <a href="tel:+919358800614">
               <div className=" relative group flex w-fit flex-col max-sm:mt-2">
               <p className="Font_YV ">+91 93588 00614</p>
-              <div className="w-0 h-px bg-[#551301]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#173e3d]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>
             <p className="px-2 max-sm:hidden">|</p>
             <a href="tel:+919310069102">
               <div className=" relative group flex w-fit flex-col">
               <p className="Font_YV max-sm:mt-2">+91 93100 69102</p>
-              <div className="w-0 h-px bg-[#551301]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#173e3d]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>
           </div>
@@ -136,29 +136,25 @@ export default function FAQ() {
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className="border-b border-[#55130121] pb-6 group relative"
+              className="border-b border-[#173e3d21] pb-6 group relative"
             >
               {/* BUTTON */}
               <button
                 onClick={() => toggleFAQ(faq.id)}
                 className="group w-full flex items-center justify-between text-left"
               >
-                <span className="tracking-wide uppercase COLOR_TEXT_RED Font_YV text-[1.5rem] max-sm:text-[1.1rem] md:text-base">
+                <span className="tracking-wide font-semibold uppercase COLOR_TEXT_RED Font_YV text-[1.5rem] max-sm:text-[1.1rem] md:text-base">
                   {faq.question}
                 </span>
 
                 {/* ICON */}
                 <span
-                  className={`relative w-5 h-5 transition-transform duration-500 ${
+                  className={`relative w-5 h-5 transition-transform FKEX justify-center items-center duration-500 ${
                     openId === faq.id ? "rotate-45" : ""
                   }`}
                 >
-                  <img
-                    src="/svgs/IconPlusnew.svg"
-                    alt="icon"
-                    className="absolute inset-0 w-full h-full"
-                  />
-                  <span className="absolute inset-0 m-auto w-[7px] h-[7px] COLOR_BG_CREAM" />
+                  +
+                  {/* <span className="absolute inset-0 m-auto w-[7px] h-[7px] COLOR_BG_CREAM" /> */}
                 </span>
               </button>
 
@@ -173,7 +169,7 @@ export default function FAQ() {
                       : "0px",
                 }}
               >
-                <div className="mt-4 Font_YV text-[18px] text-[#551301a4]">
+                <div className="mt-4 Font_YV text-[18px] text-[#173e3d]">
                   {faq.answer}
 
                   {(faq.id === 14 || faq.id === 15) && (
@@ -199,7 +195,7 @@ export default function FAQ() {
               </div>
 
               {/* HOVER LINE */}
-              <div className="w-0 h-px bg-[#C53D2E] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#173e3d] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
             </div>
           ))}
         </div>

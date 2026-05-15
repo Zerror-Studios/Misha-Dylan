@@ -70,20 +70,20 @@ const Hearts = () => {
 
     return (
         <div className='w-full h-[250vh] relative heart_cont cclt'>
-            <div className='w-full h-screen overflow-hidden sticky flex flex-col max-sm:hidden justify-center top-0 left-0 COLOR_BG_RED COLOR_TEXT_CREAM uppercase'>
+            <div className='w-full h-screen overflow-hidden sticky flex flex-col max-sm:hidden justify-center top-0 left-0 COLOR_BG_RED text-white uppercase'>
                 {/* 1 */}
-                <div className=' w-full innderHerartCont tlr  h-fit text-[6vw] leading-[6vw] Font_Q flex  gap-[2vw]  justify-center'>
+                <div className=' w-full innderHerartCont tlr  h-fit text-[4vw] leading-[4vw] Font_Q flex  gap-[2vw]  justify-center'>
                     <h1 className=''>Where love</h1>
                     <h1>meets la</h1>
                     <h1>dolce vita</h1>
                 </div>
                 {/* 1 */}
-                <div className=' w-full innderHerartCont2 tlr   whitespace-nowrap flex-nowrap h-fit text-[6vw] leading-[6vw] Font_Q flex gap-[1vw] justify-center'>
+                <div className=' w-full innderHerartCont2 tlr   whitespace-nowrap flex-nowrap h-fit text-[4vw] leading-[4vw] Font_Q flex gap-[1vw] justify-center'>
                     <h1>Pour Love like you’</h1>
                     <h1>  re pouring Wine </h1>
                 </div>
                 {/* 1 */}
-                <div className=' w-full innderHerartCont tlr  h-fit text-[6vw] leading-[5vw] Font_Q flex gap-[6vw] justify-center'>
+                <div className=' w-full innderHerartCont tlr  h-fit text-[4vw] leading-[4vw] Font_Q flex gap-[6vw] justify-center'>
                     <h1>Love under </h1>
                     <h1>the Tuscan Sun </h1>
                     
@@ -92,14 +92,14 @@ const Hearts = () => {
 
 
                 <div className=' TOPUPTEXT absolute w-full h-screen overflow-hidden opacity-0  top-0 left-0 flex flex-col justify-center items-center'>
-                    <img src={`/newimg/SonalKush1Img.webp`} className='w-full h-full object-center object-cover' alt="img" />
+                    <img src={`/FinalImage/23.webp`} className='w-full h-full object-center object-cover' alt="img" />
                 </div>
             </div>
 
 
 
             {/* SM */}
-            <div className='w-full h-screen overflow-hidden sticky flex flex-col px-[20px] text-[3rem] leading-[3rem] sm:hidden justify-center top-0 left-0 COLOR_BG_RED COLOR_TEXT_CREAM uppercase'>
+            <div className='w-full h-screen overflow-hidden sticky flex flex-col px-[20px] text-[3rem] leading-[3rem] sm:hidden justify-center top-0 left-0 COLOR_BG_RED text-white uppercase'>
                 {/* 1 */}
                 <div className=' w-full  overflow-hidden h-fit  Font_Q flex flex-col '>
                     <h1>Two</h1>
@@ -119,7 +119,8 @@ const Hearts = () => {
                 </div>
 
                 <div className=' TOPUPTEXTSM absolute w-full h-screen overflow-hidden opacity-0  top-0 left-0 flex flex-col justify-center items-center'>
-                    <img src={`/newimg/SonalKush1Img.webp`} className='w-full h-full object-center object-cover' alt="img" />
+                    {/* <img src={`/FinalImage/23.webp`} className='w-full h-full object-center object-cover' alt="img" /> */}
+                    <img src={`/FinalImage/23.webp`} className='w-full h-full object-center object-cover' alt="img" />
                 </div>
             </div>
         </div>

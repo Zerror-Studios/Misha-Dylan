@@ -1,5 +1,6 @@
 "use client";
 import gsap from "gsap";
+import Image from "next/image";
 import { useEffect } from "react";
 
 const HeroSectionHome = () => {
@@ -66,15 +67,15 @@ const HeroSectionHome = () => {
   }, []);
 
   return (
-    <div className="HeroSectionHome w-full h-[200vh] overflow-hidden mx-auto flex flex-col justify-between relative">
+    <div className="HeroSectionHome w-full h-[200vh] overflow-hidden mx-auto flex flex-col bgFirst justify-between relative">
       <img
-        src={`/imgs/newHomeImg/NHHIMG.jpg`}
+        src={`/FinalImage/3.webp`}
         className="w-full h-full object-center object-cover  z-[-1] heroImg"
         alt="IMG"
       />
 
-      <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-between">
-        <div className="w-full h-fit flex flex-col justify-center HomeTextRap1 text-[12vw] leading-[12vw] items-center pt-[50vh] px-[20px]">
+      <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-between ">
+        <div className="w-full h-fit flex flex-col justify-center HomeTextRap1 text-[12vw] leading-[12vw] items-center pt-[50vh] px-5">
           <h1 className=" leading-[11vw] text-white Font_Q">Weddings</h1>
           <h1 className=" text-white Font_Q mr-auto flex mt-5 thatText">
             that
@@ -86,9 +87,9 @@ const HeroSectionHome = () => {
         </div>
 
         <div className="w-full h-fit flex justify-center items-center pb-[10vh] overflow-hidden">
-          <div className="w-[18%] aspect-4/5 overflow-hidden ">
-            <img
-              src={`/imgs/newHomeImg/NHHIMG2.jpg`}
+          <div className="w-[18%] aspect-4/5 overflow-hidden relative ">
+            <Image fill
+              src={`/FinalImage/29.webp`}
               className="w-full h-full object-center object-cover"
               alt="IMG"
             />

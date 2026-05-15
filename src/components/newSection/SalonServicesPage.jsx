@@ -10,8 +10,8 @@ import { useState, useEffect, useRef } from "react";
 // <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
 // ─────────────────────────────────────────────────────────────────────────────
 
-const ACCENT = "#C53D2E";
-const BG = "#F6F5F1";
+const ACCENT = "#173e3d";
+const BG = "#f9de85";
 const DARK = "#1a1614";
 
 const HOTELS = [
@@ -162,11 +162,11 @@ export default function SalonServicesPage() {
         textAlign: "center",
       }}>
         <div className="hdr-anim" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 24 }}>
-          <div style={{ width: 40, height: 1, backgroundColor: ACCENT, opacity: 0.3 }} />
-          <span className="Font_YV" style={{ fontSize: 10, letterSpacing: "0.45em", textTransform: "uppercase", color: ACCENT, opacity: 0.5 }}>
+          <div style={{ width: 40, height: 1, backgroundColor: ACCENT, opacity: 0.6 }} />
+          <span className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.45em", textTransform: "uppercase", color: ACCENT, opacity: 0.5 }}>
             Dylan &amp; Misha · September 2026
           </span>
-          <div style={{ width: 40, height: 1, backgroundColor: ACCENT, opacity: 0.3 }} />
+          <div style={{ width: 40, height: 1, backgroundColor: ACCENT, opacity: 0.6 }} />
         </div>
 
         <h1 className="hdr-anim Font_Q" style={{
@@ -179,7 +179,7 @@ export default function SalonServicesPage() {
         </h1>
 
         <p className="hdr-anim Font_YV" style={{
-          marginTop: 28, fontSize: "clamp(13px, 1.6vw, 15px)", fontWeight: 300,
+          marginTop: 28, fontSize: "clamp(13px, 1.6vw, 16px)", fontWeight: 300,
           color: ACCENT, opacity: 0.6, lineHeight: 1.8, maxWidth: 480, margin: "24px auto 0",
         }}>
           Reserve your hair, make-up, and styling appointments for the celebration. Please complete the form below and our team will be in touch.
@@ -202,16 +202,16 @@ export default function SalonServicesPage() {
                   <div style={{
                     width: 32, height: 32, borderRadius: "50%",
                     backgroundColor: i <= step ? ACCENT : BG,
-                    border: `1px solid ${i <= step ? ACCENT : "rgba(197,61,46,0.25)"}`,
+                    border: `1px solid ${i <= step ? ACCENT : "#173e3d"}`,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     transition: "all 0.4s ease",
-                    fontSize: 11, fontWeight: 500,
+                    fontSize: 14, fontWeight: 500,
                     color: i <= step ? BG : ACCENT,
                     opacity: i <= step ? 1 : 0.5,
                   }}>
                     {i < step ? "✓" : i + 1}
                   </div>
-                  <span className="Font_YV" style={{ fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", opacity: i === step ? 0.9 : 0.35, transition: "opacity 0.3s", whiteSpace: "nowrap" }}>
+                  <span className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.2em", textTransform: "uppercase", opacity: i === step ? 0.9 : 0.35, transition: "opacity 0.3s", whiteSpace: "nowrap" }}>
                     {label}
                   </span>
                 </div>
@@ -222,7 +222,7 @@ export default function SalonServicesPage() {
           {/* Form Card */}
           <div style={{
             backgroundColor: "#fff",
-            border: `1px solid rgba(197,61,46,0.12)`,
+            border: `1px solid #173e3d`,
             padding: "clamp(32px, 6vw, 56px)",
             boxShadow: "0 20px 80px rgba(197,61,46,0.06)",
           }}>
@@ -286,7 +286,7 @@ export default function SalonServicesPage() {
                     {needsHair && (
                       <>
                         <div style={{ padding: "20px 24px", backgroundColor: "rgba(197,61,46,0.03)", borderLeft: `3px solid ${ACCENT}` }}>
-                          <p className="Font_YV" style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", opacity: 0.5, margin: "0 0 16px" }}>Hair Style</p>
+                          <p className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.3em", textTransform: "uppercase", opacity: 0.5, margin: "0 0 16px" }}>Hair Style</p>
                           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                             <Field label="Hair Length" error={errors.hairLength}>
                               <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -310,7 +310,7 @@ export default function SalonServicesPage() {
                     {/* Makeup fields */}
                     {needsMakeup && (
                       <div style={{ padding: "20px 24px", backgroundColor: "rgba(197,61,46,0.03)", borderLeft: `3px solid ${ACCENT}` }}>
-                        <p className="Font_YV" style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", opacity: 0.5, margin: "0 0 16px" }}>Make-Up</p>
+                        <p className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.3em", textTransform: "uppercase", opacity: 0.5, margin: "0 0 16px" }}>Make-Up</p>
                         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                           <Field label="Makeup Brief" note='e.g. "Soft Glam, Smokey Eyes"' error={errors.makeupBrief}>
                             <Textarea
@@ -328,7 +328,7 @@ export default function SalonServicesPage() {
                               onDrop={(e) => { e.preventDefault(); setDragOver(false); handleFileChange(e.dataTransfer.files); }}
                               onClick={() => document.getElementById("makeup-upload").click()}
                               style={{
-                                border: `1px dashed rgba(197,61,46,${dragOver ? "0.6" : "0.3"})`,
+                                border: `1px dashed #173e3d`,
                                 padding: "28px 20px",
                                 textAlign: "center",
                                 cursor: "pointer",
@@ -338,7 +338,7 @@ export default function SalonServicesPage() {
                               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="1.2" style={{ opacity: 0.4, margin: "0 auto 10px", display: "block" }}>
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
                               </svg>
-                              <p className="Font_YV" style={{ fontSize: 12, opacity: 0.5, margin: 0 }}>
+                              <p className="Font_YV" style={{ fontSize: 14, opacity: 0.5, margin: 0 }}>
                                 {form.makeupRefs.length > 0 ? `${form.makeupRefs.length} file(s) selected` : "Drag & drop or click to upload"}
                               </p>
                               <input id="makeup-upload" type="file" multiple accept="image/*" style={{ display: "none" }} onChange={(e) => handleFileChange(e.target.files)} />
@@ -346,7 +346,7 @@ export default function SalonServicesPage() {
                             {form.makeupRefs.length > 0 && (
                               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>
                                 {form.makeupRefs.map((f, i) => (
-                                  <span key={i} style={{ fontSize: 11, padding: "4px 10px", border: `1px solid rgba(197,61,46,0.2)`, color: ACCENT, opacity: 0.7 }}>{f.name}</span>
+                                  <span key={i} style={{ fontSize: 14, padding: "4px 10px", border: `1px solid #173e3d`, color: ACCENT, opacity: 0.7 }}>{f.name}</span>
                                 ))}
                               </div>
                             )}
@@ -392,14 +392,14 @@ export default function SalonServicesPage() {
                       <div key={i} style={{
                         display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 24,
                         padding: "14px 0",
-                        borderBottom: `1px solid rgba(197,61,46,0.08)`,
+                        borderBottom: `1px solid #173e3d`,
                       }}>
-                        <span className="Font_YV" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.4, flexShrink: 0, paddingTop: 2 }}>{k}</span>
-                        <span className="Font_YV" style={{ fontSize: 14, textAlign: "right", fontWeight: 400 }}>{v || "—"}</span>
+                        <span className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.4, flexShrink: 0, paddingTop: 2 }}>{k}</span>
+                        <span className="Font_YV" style={{ fontSize: 16, textAlign: "right", fontWeight: 400 }}>{v || "—"}</span>
                       </div>
                     ))}
                   </div>
-                  <p className="Font_YV" style={{ fontSize: 12, opacity: 0.4, marginTop: 24, lineHeight: 1.7 }}>
+                  <p className="Font_YV" style={{ fontSize: 14, opacity: 0.4, marginTop: 24, lineHeight: 1.7 }}>
                     Our salon team will confirm your appointments and reach out with any questions.
                   </p>
                 </div>
@@ -407,7 +407,7 @@ export default function SalonServicesPage() {
             </div>
 
             {/* Navigation buttons */}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 44, paddingTop: 32, borderTop: `1px solid rgba(197,61,46,0.1)` }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 44, paddingTop: 32, borderTop: `1px solid #173e3d` }}>
               {step > 0 ? (
                 <button onClick={prev} style={ghostBtnStyle}>← Back</button>
               ) : <div />}
@@ -445,13 +445,13 @@ function StepHeading({ num, title, subtitle }) {
   return (
     <div style={{ marginBottom: 40 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
-        <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: "0.4em", color: ACCENT, opacity: 0.35 }}>{num}</span>
+        <span style={{ fontFamily: "'Jost', sans-serif", fontSize: 14, letterSpacing: "0.4em", color: ACCENT, opacity: 0.35 }}>{num}</span>
         <div style={{ flex: 1, height: 1, backgroundColor: ACCENT, opacity: 0.12 }} />
       </div>
       <h2 className="Font_Q" style={{ fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 300, margin: "0 0 6px", fontStyle: "italic", color: ACCENT }}>
         {title}
       </h2>
-      <p className="Font_YV" style={{ fontSize: 13, opacity: 0.45, margin: 0, fontWeight: 300 }}>{subtitle}</p>
+      <p className="Font_YV" style={{ fontSize: 14, opacity: 0.45, margin: 0, fontWeight: 300 }}>{subtitle}</p>
     </div>
   );
 }
@@ -460,13 +460,13 @@ function Field({ label, children, note, error }) {
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 10 }}>
-        <label className="Font_YV" style={{ fontSize: 12, letterSpacing: "0.25em", textTransform: "uppercase", color: ACCENT, fontWeight: 700 }}>
+        <label className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.25em", textTransform: "uppercase", color: ACCENT, fontWeight: 700 }}>
           {label}
         </label>
         {note && <span style={{ fontSize: 10, opacity: 0.35, fontStyle: "italic" }}>{note}</span>}
       </div>
       {children}
-      {error && <p style={{ fontSize: 11, color: ACCENT, opacity: 0.7, marginTop: 6, fontStyle: "italic" }}>↑ {error}</p>}
+      {error && <p style={{ fontSize: 14, color: ACCENT, opacity: 0.7, marginTop: 6, fontStyle: "italic" }}>↑ {error}</p>}
     </div>
   );
 }
@@ -485,8 +485,8 @@ function Input({ placeholder, value, onChange, type = "text" }) {
       style={{
         width: "100%", padding: "14px 16px",
         backgroundColor: "transparent",
-        border: `1px solid rgba(197,61,46,${focused ? "0.6" : "0.2"})`,
-        color: ACCENT, fontSize: 14, fontFamily: "'Jost', sans-serif", fontWeight: 300,
+        border: `1px solid #173e3d`,
+        color: ACCENT, fontSize: 16, fontFamily: "'Jost', sans-serif", fontWeight: 300,
         transition: "border-color 0.3s",
         borderRadius: 0,
       }}
@@ -508,8 +508,8 @@ function Textarea({ placeholder, value, onChange, rows = 4 }) {
       style={{
         width: "100%", padding: "14px 16px", resize: "vertical",
         backgroundColor: "transparent",
-        border: `1px solid rgba(197,61,46,${focused ? "0.6" : "0.2"})`,
-        color: ACCENT, fontSize: 14, fontFamily: "'Jost', sans-serif", fontWeight: 300,
+        border: `1px solid #173e3d`,
+        color: ACCENT, fontSize: 16, fontFamily: "'Jost', sans-serif", fontWeight: 300,
         transition: "border-color 0.3s", borderRadius: 0,
       }}
     />
@@ -529,9 +529,9 @@ function Select({ value, onChange, options, placeholder }) {
         style={{
           width: "100%", padding: "14px 40px 14px 16px",
           backgroundColor: "transparent",
-          border: `1px solid rgba(197,61,46,${focused ? "0.6" : "0.2"})`,
+          border: `1px solid #173e3d`,
           color: value ? ACCENT : "rgba(197,61,46,0.35)",
-          fontSize: 14, fontFamily: "'Jost', sans-serif", fontWeight: 300,
+          fontSize: 16, fontFamily: "'Jost', sans-serif", fontWeight: 300,
           appearance: "none", cursor: "pointer",
           transition: "border-color 0.3s", borderRadius: 0,
         }}>
@@ -557,21 +557,21 @@ function CheckPill({ label, selected, onToggle }) {
       style={{
         display: "flex", alignItems: "center", gap: 12,
         padding: "12px 16px",
-        border: `1px solid rgba(197,61,46,${selected ? "1" : "0.2"})`,
+        border: `1px solid #173e3d`,
         backgroundColor: selected ? "rgba(197,61,46,0.06)" : hovered ? "rgba(197,61,46,0.02)" : "transparent",
         cursor: "pointer", textAlign: "left", width: "100%",
         transition: "all 0.25s ease",
       }}>
       <div style={{
         width: 16, height: 16, flexShrink: 0,
-        border: `1px solid rgba(197,61,46,${selected ? "1" : "0.3"})`,
+        border: `1px solid #173e3d)`,
         backgroundColor: selected ? ACCENT : "transparent",
         display: "flex", alignItems: "center", justifyContent: "center",
         transition: "all 0.25s",
       }}>
         {selected && <svg width="8" height="6" viewBox="0 0 8 6"><path d="M1 3l2 2 4-4" stroke={BG} strokeWidth="1.5" fill="none" /></svg>}
       </div>
-      <span style={{ fontSize: 14, color: ACCENT, fontWeight: selected ? 400 : 300 }}>{label}</span>
+      <span style={{ fontSize: 16, color: ACCENT, fontWeight: selected ? 400 : 300 }}>{label}</span>
     </button>
   );
 }
@@ -586,10 +586,10 @@ function RadioPill({ label, selected, onSelect }) {
       className="Font_YV"
       style={{
         padding: "10px 20px",
-        border: `1px solid rgba(197,61,46,${selected ? "1" : "0.25"})`,
+        border: `1px solid #173e3d`,
         backgroundColor: selected ? ACCENT : hovered ? "rgba(197,61,46,0.04)" : "transparent",
         color: selected ? BG : ACCENT,
-        fontSize: 13, fontFamily: "'Jost', sans-serif",
+        fontSize: 14, fontFamily: "'Jost', sans-serif",
         cursor: "pointer", fontWeight: selected ? 400 : 300,
         transition: "all 0.25s ease",
       }}>
@@ -625,14 +625,14 @@ function ServiceCard({ label, selected, onToggle }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         padding: "28px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 14,
-        border: `1px solid rgba(197,61,46,${selected ? "1" : "0.18"})`,
+        border: `1px solid #173e3d`,
         backgroundColor: selected ? ACCENT : hovered ? "rgba(197,61,46,0.04)" : "transparent",
         color: selected ? BG : ACCENT,
         cursor: "pointer", transition: "all 0.3s ease",
         aspectRatio: "1",
       }}>
       <div style={{ opacity: selected ? 0.9 : 0.5, transition: "opacity 0.3s" }}>{icons[label]}</div>
-      <span className="Font_YV" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 400 }}>{label}</span>
+      <span className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 400 }}>{label}</span>
     </button>
   );
 }
@@ -654,7 +654,7 @@ function SuccessScreen({ name }) {
       <h2 className="Font_Q" style={{ fontSize: "clamp(32px, 7vw, 56px)", fontWeight: 300, fontStyle: "italic", color: ACCENT, margin: "0 0 16px" }}>
         All set,<br />{name || "dear guest"}.
       </h2>
-      <p className="Font_YV" style={{ fontSize: 14, color: ACCENT, opacity: 0.55, lineHeight: 1.8, fontWeight: 300 }}>
+      <p className="Font_YV" style={{ fontSize: 16, color: ACCENT, opacity: 0.55, lineHeight: 1.8, fontWeight: 300 }}>
         Your salon booking request has been received. Our team will be in touch to confirm your appointments.
       </p>
       <div style={{ marginTop: 40, width: 1, height: 60, backgroundColor: ACCENT, opacity: 0.2, margin: "40px auto 0" }} />
@@ -667,7 +667,7 @@ const solidBtnStyle = {
   backgroundColor: ACCENT,
   color: BG,
   border: `1px solid ${ACCENT}`,
-  fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase",
+  fontSize: 14, letterSpacing: "0.3em", textTransform: "uppercase",
   cursor: "pointer", fontFamily: "'Jost', sans-serif", fontWeight: 400,
   transition: "all 0.3s ease",
 };
@@ -676,8 +676,8 @@ const ghostBtnStyle = {
   padding: "13px 28px",
   backgroundColor: "transparent",
   color: ACCENT,
-  border: `1px solid rgba(197,61,46,0.3)`,
-  fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase",
+  border: `1px solid #173e3d`,
+  fontSize: 14, letterSpacing: "0.3em", textTransform: "uppercase",
   cursor: "pointer", fontFamily: "'Jost', sans-serif", fontWeight: 300,
   transition: "all 0.3s ease",
 };

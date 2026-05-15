@@ -110,28 +110,28 @@ const NavBar = () => {
   }
 
   return (
-    <div ref={navRef} className='w-full h-[46px] mt-10 flex justify-between fixed top-0 pt-15 left-0 gap-10 items-center z-100 px-20'>
+    <div ref={navRef} className='w-full h-[46px] mt-10 flex justify-between fixed top-0 pt-10 left-0 gap-10 items-center z-100 px-20'>
       {/* Left */}
       <div className='w-3/5 h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[12px] COLOR_TEXT_RED '>
-        <Link href={`/`} ><div className={`w-fit ${pathname === '/' && (' border-b border-[#551301]')} h-fit flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div> The wedding</div></Link>
-        <Link href={`/itinerary`} ><div className={`w-fit h-fit ${pathname === '/itinerary' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Itinerary </div></Link>
-        <Link href={``} ><div className={`w-fit h-fit ${pathname === '/wedding' && (' border-b border-[#551301]')}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div> Wardrobe Planner</div></Link>
-        <Link href={`/explore`} ><div className={`w-fit h-fit ${pathname === '/explore' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Explore Florence </div></Link>
+        <Link href={`/`} ><div className={`w-fit ${pathname === '/' && (' border-b border-[#173e3d]')} h-fit flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div> The wedding</div></Link>
+        <Link href={`/itinerary`} ><div className={`w-fit h-fit ${pathname === '/itinerary' && (' border-b border-[#173e3d]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Itinerary </div></Link>
+        <Link href={``} ><div className={`w-fit h-fit ${pathname === '/wedding' && (' border-b border-[#173e3d]')}  flex flex-col group COLOR_TEXT_RED relative  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div> Wardrobe Planner</div></Link>
+        <Link href={`/explore`} ><div className={`w-fit h-fit ${pathname === '/explore' && (' border-b border-[#173e3d]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Explore Florence </div></Link>
       </div>
 
       {/* Logo */}
-      <div className='w-fit h-[50px] RVSPBTN absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 '>
-        <Link href={`/`} ><img src={`/svgs/CustomLogo.svg`} alt="Logo" className='h-full object-cover object-center' /></Link>
+      <div className='w-fit h-[30px] RVSPBTN absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 '>
+        <Link href={`/`} ><img src={`/icon/LOGO.svg`} alt="Logo" className='h-full object-cover object-center' /></Link>
       </div>
 
       {/* Right */}
       <div className='w-3/5  h-full RVSPBTN items-center max-lg:hidden flex justify-between uppercase text-[12px]   COLOR_TEXT_RED'>
-        <Link href={`/travel-acmo`} ><div className={`w-fit h-fit ${pathname === '/travel-acmo' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Travel </div></Link>
+        <Link href={`/travel-acmo`} ><div className={`w-fit h-fit ${pathname === '/travel-acmo' && (' border-b border-[#173e3d]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Travel </div></Link>
 
-        <Link href={`/salon-services`} ><div className={`w-fit h-fit ${pathname === '/salon-services' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Salon Services</div></Link>
-        <Link href={``} ><div className={`w-fit h-fit ${pathname === '/venue' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Registry / Charity </div></Link>
-        <Link href={`/travel-tips`} ><div className={`w-fit h-fit ${pathname === '/travel-tips' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Travel Tips </div></Link>
-        <Link href={`/faq`} ><div className={`w-fit h-fit ${pathname === '/faq' && (' border-b border-[#551301]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>FAQs</div></Link>
+        <Link href={`/salon-services`} ><div className={`w-fit h-fit ${pathname === '/salon-services' && (' border-b border-[#173e3d]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Salon Services</div></Link>
+        <Link href={``} ><div className={`w-fit h-fit ${pathname === '/venue' && (' border-b border-[#173e3d]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Registry / Charity </div></Link>
+        <Link href={`/travel-tips`} ><div className={`w-fit h-fit ${pathname === '/travel-tips' && (' border-b border-[#173e3d]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>Travel Tips </div></Link>
+        <Link href={`/faq`} ><div className={`w-fit h-fit ${pathname === '/faq' && (' border-b border-[#173e3d]')}  flex flex-col group relative COLOR_TEXT_RED  select-none cursor-pointer`}> <div className=' absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full duration-200 ease-out COLOR_BG_RED'></div>FAQs</div></Link>
        
         {/* BTN */}
 
