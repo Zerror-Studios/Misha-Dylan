@@ -161,13 +161,13 @@ export default function SalonServicesPage() {
         maxWidth: 900, margin: "0 auto",
         textAlign: "center",
       }}>
-        <div className="hdr-anim" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 24 }}>
+        {/* <div className="hdr-anim" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 24 }}>
           <div style={{ width: 40, height: 1, backgroundColor: ACCENT, opacity: 0.6 }} />
           <span className="Font_YV" style={{ fontSize: 14, letterSpacing: "0.45em", textTransform: "uppercase", color: ACCENT, opacity: 0.5 }}>
             Dylan &amp; Misha · September 2026
           </span>
           <div style={{ width: 40, height: 1, backgroundColor: ACCENT, opacity: 0.6 }} />
-        </div>
+        </div> */}
 
         <h1 className="hdr-anim Font_Q" style={{
           fontSize: "clamp(48px, 9vw, 100px)", fontWeight: 300,
