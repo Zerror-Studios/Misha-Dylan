@@ -63,7 +63,7 @@ export default function Home() {
      <HeroSectionHome />
      {/* <MarqueeGallery /> */}
      <Countdown />
-     <Hearts />
+     {/* <Hearts /> */}
     </>
   );
 }

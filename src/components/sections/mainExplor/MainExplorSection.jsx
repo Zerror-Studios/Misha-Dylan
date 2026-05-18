@@ -15,15 +15,15 @@ const MainExplorSection = () => {
 
   return (
     <>
-      {isMobile == false ? (
-        <>
+      {/* {isMobile == false ? (
+        <> */}
           <Explore />
-        </>
+        {/* </>
       ) : (
         <>
           <SMExplor />
         </>
-      )}
+      )} */}
     </>
   );
 };
