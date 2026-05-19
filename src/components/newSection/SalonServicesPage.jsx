@@ -173,29 +173,22 @@ export default function SalonServicesPage() {
           textAlign: "center",
         }}
       >
-        <h1
-          className="hdr-anim Font_Q"
+        <h2
+          className="hdr-anim Font_Q uppercase"
           style={{
-            fontSize: "clamp(36px, 8vw, 100px)",
-            fontWeight: 300,
-            lineHeight: 0.92,
-            margin: 0,
+          
             color: ACCENT,
           }}
         >
           Salon Services
-        </h1>
+        </h2>
         <p
-          className="hdr-anim Font_YV"
+          className="hdr-anim Font_YV mt-[3vw] mx-auto"
           style={{
-            marginTop: 10,
-            fontSize: "clamp(14px, 1.5vw, 18px)",
-            fontWeight: 300,
             color: ACCENT,
-            opacity: 0.6,
             lineHeight: 1.6,
-            maxWidth: 600,
-            margin: "20px auto 0",
+            maxWidth: 500,
+           
             padding: "0 10px",
           }}
         >
@@ -924,7 +917,7 @@ export default function SalonServicesPage() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  Continue →
+                  Continue 
                 </button>
               ) : (
                 <button

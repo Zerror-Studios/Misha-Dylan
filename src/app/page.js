@@ -59,7 +59,7 @@ export default function Home() {
         description="Welcome to the official wedding website of Misha & Dylan. Join us in celebrating our special day and explore event details, itinerary, venue information, and RSVP updates."
         url={`${Const.ClientLink}/`}
       />
-      <SectionMain />
+    <SectionMain />
      <HeroSectionHome />
      {/* <MarqueeGallery /> */}
      <Countdown />

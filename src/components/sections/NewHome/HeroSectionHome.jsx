@@ -67,7 +67,7 @@ const HeroSectionHome = () => {
   }, []);
 
   return (
-    <div className="HeroSectionHome w-full h-[200vh] overflow-hidden mx-auto flex flex-col bgFirst justify-between relative">
+    <div className="HeroSectionHome w-full h-[100vh] sm:h-[200vh] overflow-hidden mx-auto flex flex-col bgFirst justify-between relative">
       <img
         src={`/FinalImage/3.webp`}
         className="w-full h-full object-center object-cover  z-[-1] heroImg"
@@ -75,7 +75,7 @@ const HeroSectionHome = () => {
       />
 
       <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-between ">
-        <div className="w-full h-fit flex flex-col justify-center HomeTextRap1 text-[12vw] leading-[12vw] items-center pt-[50vh] px-5">
+        <div className="w-full h-fit flex flex-col justify-center HomeTextRap1 text-[12vw] leading-[12vw] items-center pt-[10vh] sm:pt-[50vh] px-5">
           <h1 className=" leading-[11vw] text-white Font_Q">Weddings</h1>
           <h1 className=" text-white Font_Q mr-auto flex mt-5 thatText">
             that
@@ -86,8 +86,8 @@ const HeroSectionHome = () => {
           <h1 className=" text-white Font_Q m-auto flex mt-5">fade</h1>
         </div>
 
-        <div className="w-full h-fit flex justify-center items-center pb-[10vh] overflow-hidden">
-          <div className="w-[18%] aspect-4/5 overflow-hidden relative ">
+        <div className="w-full h-fit flex justify-center items-center sm:pb-[10vh] overflow-hidden">
+          <div className=" w-[60%] sm:w-[18%] aspect-4/5 overflow-hidden relative ">
             <Image fill
               src={`/FinalImage/29.webp`}
               className="w-full h-full object-center object-cover"

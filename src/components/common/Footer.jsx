@@ -20,13 +20,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="pt-10 pb-6 px-4">
+    <footer className="pt-10 pb-6 px-4 border-t border-[#425F5E]">
       <div
         ref={footerRef}
-        className="max-w-5xl mx-auto text-center COLOR_TEXT_RED"
+        className="max-w-5xl mx-auto text-center COLOR_TEXT_RED "
       >
         {/* Contact Info */}
-        <div className="text-left md:text-center space-y-1 text-xs md:text-sm COLOR_TEXT_RED">
+        <div className=" text-center space-y-1 text-xs md:text-sm COLOR_TEXT_RED">
           <p className="font-medium Font_Q text-xs md:text-sm">
             Please reach out to us if you have any questions or need assistance:
           </p>
