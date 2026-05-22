@@ -411,9 +411,9 @@ const NavBar = () => {
           className="lg:hidden z-[1001] cursor-pointer"
         >
           {isNavOpen ? (
-            <RiMenu3Line className="text-[2rem] text-[#952607]" />
+            <RiMenu3Line className="text-[2rem] text-[#416160]" />
           ) : (
-            <RiMenu4Fill className="text-[2rem] text-[#952607]" />
+            <RiMenu4Fill className="text-[2rem] text-[#416160]" />
           )}
         </div>
       </div>

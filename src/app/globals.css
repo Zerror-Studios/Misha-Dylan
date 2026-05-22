@@ -5,6 +5,17 @@
   src: url('/fonts/MonsieurLaDoulaise-Regular.ttf');
 }
 
+
+
+@font-face {
+  font-family:SEFONT ;
+  src: url('/fonts/custom_new_fonts/SecFont.otf');
+}
+
+.SEFONT{
+  font-family:SEFONT ;
+}
+
 /* @font-face {
   font-family: Font_Q;
   src: url('/fonts/final/Norman.woff2');
