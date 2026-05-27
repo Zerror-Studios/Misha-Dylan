@@ -3,13 +3,13 @@ import { Const } from "@/components/utils/Constants";
 import React from "react";
 
 export const metadata = {
-  title: "Wedding Itinerary | Misha & Dylan",
+  title: "Wedding Itinerary | Dylan & Misha ",
   description:
-    "Explore the complete wedding itinerary of Misha & Dylan including Mehendi, Haldi, Sangeet, Wedding Ceremony, and Reception details.",
+    "Explore the complete wedding itinerary of Dylan & Misha  including Mehendi, Haldi, Sangeet, Wedding Ceremony, and Reception details.",
 
   openGraph: {
-    title: "Wedding Itinerary | Misha & Dylan",
-    description: "Complete schedule of Misha & Dylan's wedding celebrations.",
+    title: "Wedding Itinerary | Dylan & Misha ",
+    description: "Complete schedule of Dylan & Misha 's wedding celebrations.",
     url: "https://www.sonalskushie.com/wedding",
     type: "website",
   },
@@ -19,8 +19,8 @@ const page = () => {
   return (
     <>
       <WebPageSchema
-        name="Wedding Itinerary | Misha & Dylan"
-        description="Explore the complete wedding itinerary of Misha & Dylan including Mehendi, Haldi, Sangeet, Wedding Ceremony, and Reception schedule with dates and timings."
+        name="Wedding Itinerary | Dylan & Misha "
+        description="Explore the complete wedding itinerary of Dylan & Misha  including Mehendi, Haldi, Sangeet, Wedding Ceremony, and Reception schedule with dates and timings."
         url={`${Const.ClientLink}/wedding`}
       />
       <div className="w-full h-svh flex flex-col justify-center items-center">

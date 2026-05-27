@@ -103,7 +103,7 @@ export default function FAQ() {
         <h2 className="text-center Font_Q flex flex-col justify-center items-center max-sm:justify-start max-sm:mt-10 COLOR_TEXT_RED">
           FAQ
           <p className="  Font_YV mt-7 font-bold sm:pt-5 max-sm:w-full max-sm:px-[10vw]">
-            For any wedding-related questions, please reach out to Misha & Dylan wedding planning team at:
+            For any wedding-related questions, please reach out to Dylan & Misha  wedding planning team at:
           </p>
           <div className=" w-fit h-fit flex sm:gap-2 mt-4 justify-center items-center max-sm:flex-col">
 

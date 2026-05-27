@@ -9,7 +9,7 @@ import WebPageSchema from "@/components/seo/WebPageSchema";
 import { Const } from "@/components/utils/Constants";
 
 export const metadata = {
-  title: "MISHA & Dylan | Official Wedding Website",
+  title: "Dylan & Misha  | Official Wedding Website",
   description:
     "Join us in celebrating the wedding of Dylan & Misha. Explore the event details, itinerary, venue information, and RSVP for our special day.",
 
@@ -26,11 +26,11 @@ export const metadata = {
   robots: "index, follow",
 
   openGraph: {
-    title: "Misha & DylanWedding | Official Website",
+    title: "Dylan & Misha Wedding | Official Website",
     description:
       "Celebrate the wedding of Dylan & Misha. Find itinerary, venue details, hotel information & RSVP.",
     url: "https://www.DylansMishaie.com",
-    siteName: "Misha & Dylan Wedding",
+    siteName: "Dylan & Misha  Wedding",
     type: "website",
     images: [
       {
@@ -44,7 +44,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Misha & Dylan Wedding",
+    title: "Dylan & Misha  Wedding",
     description:
       "Official wedding website of Dylan & Misha. RSVP and explore event details.",
     images: ["https://www.DylansMishaie.com/imgs/logo/og.png"],
@@ -55,8 +55,8 @@ export default function Home() {
   return (
     <>
       <WebPageSchema
-        name=" Misha & Dylan  Wedding | Official Wedding Website"
-        description="Welcome to the official wedding website of Misha & Dylan. Join us in celebrating our special day and explore event details, itinerary, venue information, and RSVP updates."
+        name=" Dylan & Misha   Wedding | Official Wedding Website"
+        description="Welcome to the official wedding website of Dylan & Misha . Join us in celebrating our special day and explore event details, itinerary, venue information, and RSVP updates."
         url={`${Const.ClientLink}/`}
       />
     <SectionMain />

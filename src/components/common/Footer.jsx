@@ -20,16 +20,21 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="pt-10 h-[80vh] pb-6 px-4   relative">
+    <footer className="pt-10 h-[50vh] pb-6 px-4   relative flex justify-center items-center bg-[#F9DE85]">
 
-      <img src={`/FinalImage/33.webp`} alt="IMG" className="w-full h-full  brightness-[50%] absolute top-0 left-0  object-cover object-top z-[-1]" />
+      {/* <img src={`/FinalImage/33.webp`} alt="IMG" className="w-full h-full  brightness-[50%] absolute top-0 left-0  object-cover object-top z-[-1]" /> */}
 
       <div
         ref={footerRef}
-        className="max-w-5xl mx-auto text-center flex flex-col h-full items-center justify-between text-[#F9DE85] "
+        className="max-w-5xl mx-auto text-center flex flex-col h-full  items-center justify-center text-[#F9DE85] "
       >
+
+         <div  className="w-[120px] h-[120px] ">
+          <img src={`/FinalImage/FooterLogo.png`} alt="IMG" className="w-full  object-cover object-center" />
+        </div>
+
         {/* Contact Info */}
-        <div className=" text-center space-y-1 text-xs flex flex-col gap-2 md:text-sm text-[#F9DE85]">
+        <div className=" text-center space-y-1 text-xs flex flex-col gap-2 md:text-sm mt-2 COLOR_TEXT_RED ">
           <p className="font-medium Font_Q text-xs md:text-sm">
             Please reach out to us if you have any questions or need assistance:
           </p>
@@ -57,9 +62,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div  className="w-[100px] h-[100px] ">
-          <img src={`/FinalImage/FooterLogo.png`} alt="IMG" className="w-full  object-cover object-center" />
-        </div>
+       
       </div>
     </footer>
   );

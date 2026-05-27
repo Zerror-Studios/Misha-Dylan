@@ -70,7 +70,7 @@ const HomeHeroSection = () => {
             </div>
             
             <div className='w-full h-full absolute top-0 left-0 z-20 flex max-sm:pb-8 justify-center items-end HOMEMAIM px-[20px]'>
-                <h1 className=' uppercase  text-[9vw] max-sm:text-[14vw] max-sm:leading-[14vw] max-sm:text-center Font_Q opacity-0 COLOR_TEXT_CREAM HOMEMAIM'>Misha & Dylan</h1>
+                <h1 className=' uppercase  text-[9vw] max-sm:text-[14vw] max-sm:leading-[14vw] max-sm:text-center Font_Q opacity-0 COLOR_TEXT_CREAM HOMEMAIM'>Dylan & Misha </h1>
             </div>
         </div>
     )

@@ -278,7 +278,7 @@ const Explore = () => {
   let globalIndex = 0;
 
   return (
-    <div ref={containerRef} className="COLOR_BG_CREAM min-h-screen w-full overflow-x-hidden">
+    <div ref={containerRef} className="bg-[#CFDCE2] min-h-screen w-full overflow-x-hidden">
       <HeroSection />
 
       {grouped.map((group) => (
@@ -302,14 +302,14 @@ const Explore = () => {
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 
 const HeroSection = () => (
-  <section className="hero-section w-full min-h-screen relative flex flex-col justify-center pb-16 md:pb-24 overflow-hidden">
+  <section className="hero-section w-full min-h-screen relative flex flex-col justify-center pb-16 md:pb-30 overflow-hidden">
 
     {/* Background image */}
     <div className="hero-img-1 absolute top-0 right-0 w-full h-full overflow-hidden z-0">
       <img
-        src="/FinalImage/1.webp"
+        src="/FinalImage/27.webp"
         alt="Florence"
-        className="w-full h-full object-cover object-[50%_58%] scale-[1.08]"
+        className="w-full h-full object-cover object-[50%_48%] scale-[1.08]"
       />
     </div>
 
@@ -409,7 +409,7 @@ const SectionBlock = ({ section, index }) => {
                 style={{ clipPath: "inset(100% 0% 0% 0%)" }}
               >
                 {/* Taller on mobile for better visual impact */}
-                <div className="aspect-[2/3] md:aspect-[3/4] max-sm:border-[4vw] sm:border-[2vw] border-[#F9DE85] w-full overflow-hidden">
+                <div className="aspect-[2/3] md:aspect-[3/4] max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E] w-full overflow-hidden">
                   <Image
                     src={section.images[0].src}
                     alt={section.images[0].alt}
@@ -429,7 +429,7 @@ const SectionBlock = ({ section, index }) => {
                 }}
               >
                 <div
-                  className="aspect-[2/3] md:aspect-[3/4] max-sm:border-[4vw] sm:border-[2vw] border-[#F9DE85] w-full overflow-hidden"
+                  className="aspect-[2/3] md:aspect-[3/4] max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E] w-full overflow-hidden"
                   style={{ marginTop: isLeft ? "4vh" : "0" }}
                 >
                   <Image

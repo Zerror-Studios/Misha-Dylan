@@ -8,9 +8,9 @@ import { useEffect, useRef, useState } from "react";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ACCENT = "#173e3d";
-const BG = "#fff9ed";
+const BG = "#F9DE85";
 
-const HERO_IMG = `/FinalImage/15.webp`;
+const HERO_IMG = `/FinalImage/9.webp`;
 const VISA_IMG = "/FinalImage/20.webp";
 const TRANSPORT_IMG = "/FinalImage/41.webp";
 const HOTEL_IMG = "/FinalImage/30.webp";
@@ -136,7 +136,7 @@ export default function Travelaccommodation() {
 
   return (
     <div
-      className="Font_Q"
+      className="Font_Q border-b border-[#173e3d]"
       style={{
         backgroundColor: BG,
         minHeight: "100vh",
@@ -167,7 +167,7 @@ export default function Travelaccommodation() {
             width: "100%",
             height: "115%",
             objectFit: "cover",
-            objectPosition: "center",
+            objectPosition: "40% 45%",
             filter: "brightness(0.6)",
           }}
         />
@@ -208,7 +208,7 @@ export default function Travelaccommodation() {
             }}
           >
             <div
-              className="col-image max-sm:border-[4vw] sm:border-[2vw] border-[#F9DE85]"
+              className="col-image max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E]"
               style={{
                 position: "relative",
                 overflow: "hidden",
@@ -323,7 +323,7 @@ export default function Travelaccommodation() {
               </div>
             </div>
             <div
-              className="col-image max-sm:border-[4vw] sm:border-[2vw] border-[#F9DE85]"
+              className="col-image max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E]"
               style={{
                 position: "relative",
                 overflow: "hidden",
@@ -411,7 +411,7 @@ export default function Travelaccommodation() {
             }}
           >
             <div
-              className="col-image max-sm:border-[4vw] sm:border-[2vw] border-[#F9DE85]"
+              className="col-image max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E]"
               style={{
                 position: "relative",
                 overflow: "hidden",
@@ -535,7 +535,7 @@ export default function Travelaccommodation() {
               </div>
             </div>
             <div
-              className="col-image max-sm:border-[4vw] sm:border-[2vw] border-[#F9DE85]"
+              className="col-image max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E]"
               style={{
                 position: "relative",
                 overflow: "hidden",
@@ -727,7 +727,7 @@ function AirportCard({ ap }) {
         style={{
           padding: "32px 28px",
           border: `1px solid rgba(197,61,46,${hovered ? "0.4" : "0.15"})`,
-          backgroundColor: hovered ? "#F89A8E" : "",
+          backgroundColor: hovered ? "#173e3d" : "",
           transition: "all 0.35s ease",
           cursor: "pointer",
           textAlign: "left",
@@ -739,7 +739,7 @@ function AirportCard({ ap }) {
             fontSize: 36,
             fontWeight: 700,
             margin: "0 0 8px",
-            color: ACCENT,
+            color: hovered ? BG : "",
             lineHeight: 1,
           }}
         >
@@ -749,7 +749,7 @@ function AirportCard({ ap }) {
           className="Font_YV"
           style={{
             fontSize: 16,
-            color: ACCENT,
+           color: hovered ? BG : "",
             margin: "0 0 20px",
             fontWeight: 300,
           }}
@@ -762,7 +762,7 @@ function AirportCard({ ap }) {
             fontSize: 16,
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: ACCENT,
+            color: hovered ? BG : "",
             transition: "opacity 0.3s",
           }}
         >
