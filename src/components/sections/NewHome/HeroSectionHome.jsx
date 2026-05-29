@@ -69,27 +69,27 @@ const HeroSectionHome = () => {
   return (
     <div className="HeroSectionHome w-full h-[100vh] sm:h-[200vh] overflow-hidden mx-auto flex flex-col bgFirst justify-between relative">
       <img
-        src={`/FinalImage/3.webp`}
+        src={`/FinalImage/h1.webp`}
         className="w-full h-full object-center object-cover  z-[-1] heroImg"
         alt="IMG"
       />
 
       <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-between ">
         <div className="w-full h-fit flex flex-col justify-center HomeTextRap1 text-[12vw] leading-[12vw] items-center pt-[10vh] sm:pt-[50vh] px-5">
-          <h1 className=" leading-[11vw] text-white SEFONT2 capitalize">See</h1>
+          <h1 className=" leading-[11vw] text-white SEFONT2 capitalize">see</h1>
           <h1 className=" text-white SEFONT2 mr-auto capitalize flex mt-5 thatText">
-            You
+            you
           </h1>
           <h1 className=" text-white SEFONT2 ml-auto capitalize flex mt-5 neverText">
-            AT
+            at
           </h1>
-          <h1 className=" text-white SEFONT2 m-auto capitalize flex mt-5">Florence</h1>
+          <h1 className=" text-white SEFONT2 m-auto capitalize flex mt-5"> in florence</h1>
         </div>
 
         <div className="w-full h-fit flex justify-center items-center sm:pb-[10vh] overflow-hidden">
           <div className=" w-[60%] sm:w-[18%] aspect-4/5 overflow-hidden relative max-sm:border-[1vw] sm:border-[0.5vw] border-[#F9DE85]">
             <Image fill
-              src={`/FinalImage/30.webp`}
+              src={`/FinalImage/h4.webp`}
               className="w-full h-full object-center object-cover"
               alt="IMG"
             />

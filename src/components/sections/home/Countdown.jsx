@@ -166,7 +166,7 @@ const Countdown = () => {
                 ].map((item, index) => (
                     <div key={index} className="flex items-center">
                         <div className="text-center">
-                            <div className="text-[6vw] leading-[6vw] max-sm:text-[2.5rem] max-sm:leading-[2.5rem] SEFONT  tracking-wide">
+                            <div className="text-[6vw] leading-[6vw] max-sm:text-[2.5rem] max-sm:leading-[2.5rem] font-serif font-light  tracking-wide">
                                 {item.value}
                             </div>
                             <div className="mt-2 text-[1rem] max-sm:text-[0.7rem] max-sm:leading-[0.7rem] Font_YV font-semibold tracking-widest uppercase">
