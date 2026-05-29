@@ -4,7 +4,7 @@ const SectionMain = () => {
   return (
     <div className="w-full min-h-screen bgFirst  relative pt-10">
       <div className="w-full h-fit flex justify-center items-center pt-[9vh] sm:pt-[4vh]">
-        <h1 className="Font_Q max-sm:leading-[13vw] max-sm:text-[12vw] max-sm:px-5 text-[13vw] uppercase COLOR_TEXT_RED">
+        <h1 className="Font_Q max-sm:leading-[12vw] max-sm:text-[11vw] max-sm:px-5 text-[13vw] uppercase COLOR_TEXT_RED">
           Dylan & Misha 
         </h1>
       </div>

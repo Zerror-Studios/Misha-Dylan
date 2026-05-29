@@ -81,9 +81,9 @@ const HeroSectionHome = () => {
             you
           </h1>
           <h1 className=" text-white SEFONT2 ml-auto capitalize flex mt-5 neverText">
-            at
+            in
           </h1>
-          <h1 className=" text-white SEFONT2 m-auto capitalize flex mt-5"> in florence</h1>
+          <h1 className=" text-white SEFONT2 m-auto capitalize flex mt-5">florence</h1>
         </div>
 
         <div className="w-full h-fit flex justify-center items-center sm:pb-[10vh] overflow-hidden">

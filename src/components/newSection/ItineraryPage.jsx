@@ -17,7 +17,7 @@ const events = [
     transfer: "Transfers to Villa Corti will begin at 5:30 PM.",
     accent: "White",
     index: "01",
-    url: `/FinalImage/11.webp`,
+    url: `/FinalImage/h4.webp`,
   },
   {
     date: "18 September",
