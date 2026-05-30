@@ -30,7 +30,7 @@ export default function Footer() {
       >
 
          <div  className="w-[120px] h-[120px] ">
-          <img src={`/FinalImage/FooterLogo.png`} alt="IMG" className="w-full  object-cover object-center" />
+          <img src={`/icon/LOGO.svg`} alt="IMG" className="w-full  object-cover object-center" />
         </div>
 
         {/* Contact Info */}
