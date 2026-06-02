@@ -109,6 +109,7 @@ const NavBar = () => {
     { name: "Salon Services", path: "/salon-services" },
     { name: "Travel Tips", path: "/travel-tips" },
     { name: "FAQs", path: "/faq" },
+    { name: "Wardrobe", path: "/wardrobe" },
   ];
 
   return (
