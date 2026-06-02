@@ -1,5 +1,6 @@
 "use client";
 
+import { HiArrowRight } from "react-icons/hi2";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 
@@ -131,66 +132,137 @@ export default function Page() {
         duration: 0.8,
         stagger: 0.08,
         ease: "power3.out",
-      }
+      },
     );
   }, [active]);
 
   return (
-    <section className="w-full h-screen bg-[#ececec] overflow-hidden relative">
-      
+    <section className="w-full min-h-screen COLOR_BG_CREAM overflow-hidden relative">
       {/* NAV */}
-      <div className="absolute top-[10vh] left-[3vw] z-50 flex flex-col leading-none">
+      {/* <div className=" z-50 flex flex-col leading-none w-fit mt-[14vh] mx-auto">
         {Object.keys(galleryData).map((item) => (
           <button
             key={item}
             onClick={() => changeCategory(item)}
             className={`text-left uppercase transition-all duration-300 Font_Q py-[0.3rem] cursor-pointer
-              ${
-                active === item
-                  ? "text-[#416160] opacity-100"
-                  : "text-[#416160] opacity-40"
+              ${active === item
+                ? "text-[#416160] opacity-100"
+                : "text-[#416160] opacity-40"
               }
             `}
           >
             {item}
           </button>
         ))}
-      </div>
+      </div> */}
+
+      <div className="z-50 flex flex-col leading-none w-fit mt-[14vh] mx-auto">
+  {Object.keys(galleryData).map((item) => (
+    <button
+      key={item}
+      onClick={() => changeCategory(item)}
+      className={`
+        group
+        flex
+        items-center
+        gap-2
+        text-left
+        uppercase
+        Font_Q
+        py-[0.4rem]
+        cursor-pointer
+        transition-all
+        duration-300
+        ${
+          active === item
+            ? "text-[#416160] opacity-100"
+            : "text-[#416160] opacity-40 hover:opacity-70"
+        }
+      `}
+    >
+      <span
+        className={`
+          overflow-hidden
+          transition-all
+          duration-500
+          ${
+            active === item
+              ? "w-[1.2rem] opacity-100"
+              : "w-0 opacity-0"
+          }
+        `}
+      >
+        <HiArrowRight className="text-[1rem]" />
+      </span>
+
+      <span>{item}</span>
+    </button>
+  ))}
+</div>
 
       {/* DECORATION */}
 
-      <div className="absolute left-[0vw] top-[49vh] w-[1.2vw] h-[1.2vw] bg-[#1f1410]" />
+      {/* <div className="absolute left-[0vw] top-[49vh] w-[1.2vw] h-[1.2vw] bg-[#1f1410]" />
 
       <div className="absolute left-[15vw] top-[60vh] w-[4vw] h-[4vw] bg-[#d3d3d3]" />
 
       <div className="absolute right-[18vw] top-[25vh] w-[1.8vw] h-[1.8vw] bg-[#d7d7d7]" />
 
-      <div className="absolute right-[14vw] bottom-[23vh] w-[2vw] h-[2vw] bg-[#261814]" />
+      <div className="absolute right-[14vw] bottom-[23vh] w-[2vw] h-[2vw] bg-[#261814]" /> */}
 
       {/* COLLAGE */}
 
-      <div ref={collageRef} className="absolute inset-0 mt-[10vh]">
+      <div
+        ref={collageRef}
+        className={` mt-[5vh] px-[10vw] max-sm:px-5 py-10
+    columns-2
+    md:columns-3
+    lg:columns-4
+    xl:columns-5
+    gap-[1rem]`}
+  
+      >
         {galleryData[active].map((item, index) => (
           <div
             key={`${active}-${index}`}
-            className={`absolute overflow-hidden ${item.cls}`}
+            className="group mb-[1rem] break-inside-avoid "
           >
-            <img
-              src={item.img}
-              alt={active}
-              className="w-full h-full object-cover"
-            />
+            <div
+              className={`
+          overflow-hidden
+          rounded-[1rem]
+          ${index % 5 === 0
+                  ? "h-[34rem]"
+                  : index % 3 === 0
+                    ? "h-[26rem]"
+                    : "h-[20rem]"
+                }
+        `}
+            >
+              <img
+                src={item.img}
+                alt=""
+                className={`
+            w-full
+            h-full
+            object-cover
+            transition-all
+            duration-700
+            group-hover:scale-105
+          `}
+              />
+            </div>
           </div>
         ))}
       </div>
 
       {/* LABEL */}
 
-      <div className="absolute bottom-[8vh] left-1/2 -translate-x-1/2 flex flex-col items-center">
+      {/* <div className="absolute bottom-[8vh] left-1/2 -translate-x-1/2 flex flex-col items-center">
         <p className="text-[1rem] tracking-[0.2rem] uppercase text-[#416160] Font-Q">
           {active}
         </p>
-      </div>
+      </div> */}
     </section>
   );
 }
