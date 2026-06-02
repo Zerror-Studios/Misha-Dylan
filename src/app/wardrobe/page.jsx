@@ -14,7 +14,7 @@ const galleryData = {
       cls: "left-[15vw] top-[18vh] w-[20vw] h-[40vh]",
     },
     {
-      img: "/FinalImage/indianWeed/3.webp",
+      img: "/FinalImage/indianWeed/8.webp",
       cls: "left-[21vw] top-[60vh] w-[14vw] h-[24vh]",
     },
     {
