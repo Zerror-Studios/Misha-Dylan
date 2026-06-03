@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -38,7 +38,10 @@ const SECTIONS = [
     body: "The best panoramic viewpoint in Florence with spectacular sunset views over the city rooftops.",
     meta: ["Taxi 10 min · Walk 25 min", "Free"],
     images: [
-      { src: "/FinalImage/exploreFlorence/c1.jpg", alt: "Piazzale Michelangelo" },
+      {
+        src: "/FinalImage/exploreFlorence/c1.jpg",
+        alt: "Piazzale Michelangelo",
+      },
       { src: "/FinalImage/exploreFlorence/c2.jpg", alt: "Boboli Gardens" },
     ],
     layout: "left",
@@ -50,7 +53,10 @@ const SECTIONS = [
     meta: ["15 min walk from city centre", "€16"],
     images: [
       { src: "/FinalImage/exploreFlorence/d1.jpg", alt: "Pitti Palace" },
-      { src: "/FinalImage/exploreFlorence/d2.jpg", alt: "Basilica of Santa Croce" },
+      {
+        src: "/FinalImage/exploreFlorence/d2.jpg",
+        alt: "Basilica of Santa Croce",
+      },
     ],
     layout: "right",
   },
@@ -72,7 +78,10 @@ const SECTIONS = [
     meta: ["1 hour by train", "€10–€15"],
     images: [
       { src: "/FinalImage/exploreFlorence/f1.jpg", alt: "Siena" },
-      { src: "/FinalImage/exploreFlorence/f2.jpg", alt: "Tuscan Cooking Class" },
+      {
+        src: "/FinalImage/exploreFlorence/f2.jpg",
+        alt: "Tuscan Cooking Class",
+      },
     ],
     layout: "right",
   },
@@ -110,165 +119,196 @@ const SECTIONS = [
   },
 ];
 
-const CATEGORIES = ["Places to Visit", "Tours & Experiences", "Culinary Guide", "Shopping"];
+const CATEGORIES = [
+  "Places to Visit",
+  "Tours & Experiences",
+  "Culinary Guide",
+  "Shopping",
+];
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
 const Explore = () => {
   const containerRef = useRef();
 
-  useGSAP(() => {
-    // Hero title animation
-    gsap.fromTo(
-      ".hero-title-word",
-      { yPercent: 110, opacity: 0 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        stagger: 0.12,
-        duration: 1.2,
-        ease: "expo.out",
-        delay: 0.2,
-      }
-    );
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-    gsap.fromTo(
-      ".hero-sub",
-      { opacity: 0, y: 24 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.8 }
-    );
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY || containerRef.current?.scrollTop || 0;
+      setShowScrollTop(scrolled > 500);
+    };
 
-    gsap.fromTo(
-      ".hero-pills",
-      { opacity: 0, y: 16 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 1.1 }
-    );
+    window.addEventListener("scroll", handleScroll);
+    containerRef.current?.addEventListener("scroll", handleScroll);
 
-    // Hero images parallax — only on non-touch devices
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 768px)", () => {
-      gsap.to(".hero-img-1", {
-        yPercent: -18,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero-section",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      containerRef.current?.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-    // Category label lines
-    gsap.utils.toArray(".cat-line").forEach((el) => {
+  const scrollToTop = () => {
+    console.log('click')
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    containerRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useGSAP(
+    () => {
+      // Hero title animation
       gsap.fromTo(
-        el,
-        { scaleX: 0 },
-        {
-          scaleX: 1,
-          duration: 1,
-          ease: "power3.inOut",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-
-    // Section title reveals
-    gsap.utils.toArray(".section-title-reveal").forEach((el) => {
-      gsap.fromTo(
-        el,
-        { yPercent: 100 },
+        ".hero-title-word",
+        { yPercent: 110, opacity: 0 },
         {
           yPercent: 0,
-          duration: 1,
+          opacity: 1,
+          stagger: 0.12,
+          duration: 1.2,
           ease: "expo.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-        }
+          delay: 0.2,
+        },
       );
-    });
 
-    // Body text fade
-    gsap.utils.toArray(".section-body-fade").forEach((el) => {
       gsap.fromTo(
-        el,
-        { opacity: 0, y: 20 },
+        ".hero-sub",
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.8 },
+      );
+
+      gsap.fromTo(
+        ".hero-pills",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 1.1 },
+      );
+
+      // Hero images parallax — only on non-touch devices
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 768px)", () => {
+        gsap.to(".hero-img-1", {
+          yPercent: -18,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero-section",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      });
+
+      // Category label lines
+      gsap.utils.toArray(".cat-line").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            duration: 1,
+            ease: "power3.inOut",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Section title reveals
+      gsap.utils.toArray(".section-title-reveal").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { yPercent: 100 },
+          {
+            yPercent: 0,
+            duration: 1,
+            ease: "expo.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Body text fade
+      gsap.utils.toArray(".section-body-fade").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Images reveal
+      gsap.utils.toArray(".img-reveal").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { clipPath: "inset(100% 0% 0% 0%)", scale: 1.08 },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            scale: 1,
+            duration: 1.2,
+            ease: "expo.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Abstract number counters
+      gsap.utils.toArray(".section-number").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, x: -30 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+
+      // Tip panel
+      gsap.fromTo(
+        ".tip-content",
+        { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.9,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-
-    // Images reveal
-    gsap.utils.toArray(".img-reveal").forEach((el) => {
-      gsap.fromTo(
-        el,
-        { clipPath: "inset(100% 0% 0% 0%)", scale: 1.08 },
-        {
-          clipPath: "inset(0% 0% 0% 0%)",
-          scale: 1,
-          duration: 1.2,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-
-    // Abstract number counters
-    gsap.utils.toArray(".section-number").forEach((el) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
+          duration: 1,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
+            trigger: ".tip-panel",
+            start: "top 75%",
             toggleActions: "play none none reverse",
           },
-        }
-      );
-    });
-
-    // Tip panel
-    gsap.fromTo(
-      ".tip-content",
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".tip-panel",
-          start: "top 75%",
-          toggleActions: "play none none reverse",
         },
-      }
-    );
-  }, { scope: containerRef });
+      );
+    },
+    { scope: containerRef },
+  );
 
   const grouped = CATEGORIES.map((cat) => ({
     category: cat,
@@ -278,24 +318,52 @@ const Explore = () => {
   let globalIndex = 0;
 
   return (
-    <div ref={containerRef} className="bg-[#CFDCE2] min-h-screen w-full overflow-x-hidden">
-      <HeroSection />
+    <>
+      <div
+        ref={containerRef}
+        className="bg-[#CFDCE2] min-h-screen w-full overflow-x-hidden"
+      >
+        <HeroSection />
 
-      {grouped.map((group) => (
-        <CategoryGroup
-          key={group.category}
-          category={group.category}
-          items={group.items}
-          startIndex={(() => {
-            const idx = globalIndex;
-            globalIndex += group.items.length;
-            return idx;
-          })()}
-        />
-      ))}
+        {grouped.map((group) => (
+          <CategoryGroup
+            key={group.category}
+            category={group.category}
+            items={group.items}
+            startIndex={(() => {
+              const idx = globalIndex;
+              globalIndex += group.items.length;
+              return idx;
+            })()}
+          />
+        ))}
 
-      <TipPanel />
-    </div>
+        <TipPanel />
+      </div>
+
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 cursor-pointer right-6 z-[9999] flex h-12 w-12 items-center justify-center rounded-full bg-[#C53D2E] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          aria-label="Scroll to top"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </button>
+      )}
+    </>
   );
 };
 
@@ -303,7 +371,6 @@ const Explore = () => {
 
 const HeroSection = () => (
   <section className="hero-section w-full min-h-screen relative flex flex-col justify-center pb-16 md:pb-30 overflow-hidden">
-
     {/* Background image */}
     <div className="hero-img-1 absolute top-0 right-0 w-full h-full overflow-hidden z-0">
       <img
@@ -327,10 +394,14 @@ const HeroSection = () => (
       <div className="hero-sub flex items-start gap-12 mt-4 md:mt-5 max-w-[90vw] md:max-w-[500px]">
         <div className="flex flex-col gap-3">
           <p className="COLOR_TEXT_RED Font_Q text-center leading-relaxed text-[14px] md:text-base">
-            Florence is a city of Renaissance art, beautiful architecture, charming streets, and unforgettable food. If you have some time between celebrations, here are a few of our favourite recommendations.
+            Florence is a city of Renaissance art, beautiful architecture,
+            charming streets, and unforgettable food. If you have some time
+            between celebrations, here are a few of our favourite
+            recommendations.
           </p>
           <p className="COLOR_TEXT_RED Font_Q text-center text-[12px] md:text-sm">
-            All travel times are approximate from Florence's historic centre (Duomo area).
+            All travel times are approximate from Florence's historic centre
+            (Duomo area).
           </p>
         </div>
       </div>
@@ -358,11 +429,7 @@ const CategoryGroup = ({ category, items, startIndex }) => (
     </div>
 
     {items.map((section, i) => (
-      <SectionBlock
-        key={i}
-        section={section}
-        index={startIndex + i}
-      />
+      <SectionBlock key={i} section={section} index={startIndex + i} />
     ))}
   </div>
 );
@@ -376,7 +443,6 @@ const SectionBlock = ({ section, index }) => {
 
   return (
     <section className="w-full px-6 md:px-[6vw] py-12 md:py-24 relative">
-
       {/* Abstract large number — hidden on small screens */}
       <div
         className={`section-number hidden md:block absolute top-8 ${isLeft ? "right-[6vw]" : "left-[6vw]"} SEFONT COLOR_TEXT_RED leading-none select-none pointer-events-none`}
@@ -391,15 +457,15 @@ const SectionBlock = ({ section, index }) => {
       <div
         className={`
           relative z-10 flex flex-col gap-8 md:gap-20 items-center
-          ${hasImages
-            ? isLeft
-              ? "md:flex-row"
-              : "md:flex-row-reverse"
-            : "md:flex-row"
+          ${
+            hasImages
+              ? isLeft
+                ? "md:flex-row"
+                : "md:flex-row-reverse"
+              : "md:flex-row"
           }
         `}
       >
-
         {/* IMAGES COLUMN */}
         {hasImages && (
           <div className="w-full md:w-[52%] flex gap-3 md:gap-4 shrink-0">
@@ -449,10 +515,7 @@ const SectionBlock = ({ section, index }) => {
         <div
           className={`
             w-full flex flex-col gap-4 md:gap-6
-            ${hasImages
-              ? "md:w-[44%]"
-              : "md:max-w-[600px] md:mx-auto"
-            }
+            ${hasImages ? "md:w-[44%]" : "md:max-w-[600px] md:mx-auto"}
           `}
         >
           {/* Title */}
@@ -493,11 +556,15 @@ const TipPanel = () => (
         className="Font_Q COLOR_TEXT_RED  uppercase font-light leading-[0.92]"
         // style={{ fontSize: "clamp(32px, 6vw, 68px)" }}
       >
-        Florence on<br />foot
+        Florence on
+        <br />
+        foot
       </h2>
 
       <p className="text-[14px] md:text-[15px] COLOR_TEXT_RED Font_YV leading-relaxed max-w-[90vw] md:max-w-[400px]">
-        Florence is a compact and wonderfully walkable city. Many of its most famous landmarks, restaurants, and shops are within the historic centre and can easily be explored on foot.
+        Florence is a compact and wonderfully walkable city. Many of its most
+        famous landmarks, restaurants, and shops are within the historic centre
+        and can easily be explored on foot.
       </p>
     </div>
   </section>

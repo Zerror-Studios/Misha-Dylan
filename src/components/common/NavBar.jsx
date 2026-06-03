@@ -104,12 +104,13 @@ const NavBar = () => {
   const navLinks = [
     { name: "The Wedding", path: "/" },
     { name: "Itinerary", path: "/itinerary" },
+    { name: "Wardrobe Planner", path: "/wardrobe" },
     { name: "Explore Florence", path: "/explore" },
     { name: "Travel", path: "/travel-acmo" },
     { name: "Salon Services", path: "/salon-services" },
     { name: "Travel Tips", path: "/travel-tips" },
     { name: "FAQs", path: "/faq" },
-    { name: "Wardrobe", path: "/wardrobe" },
+    
   ];
 
   return (
