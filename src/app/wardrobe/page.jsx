@@ -215,7 +215,7 @@ const galleryData = {
   "Indian Wedding": [
     {
       type: "label",
-      text: "Indian",
+      text: "Indian Wedding",
       col: "col-span-2 lg:col-span-1",
       row: "row-span-2",
     },
@@ -231,10 +231,10 @@ const galleryData = {
       col: "col-span-1",
       row: "row-span-2",
     },
-
     {
-      img: "/FinalImage/indianWeed/3.webp",
-      col: "col-span-1",
+      type: "label",
+      text: "Indian Regal",
+      col: "col-span-2 lg:col-span-1",
       row: "row-span-2",
     },
 
@@ -250,12 +250,7 @@ const galleryData = {
       row: "row-span-2",
     },
 
-    {
-      type: "label",
-      text: "Wedding",
-      col: "col-span-2 lg:col-span-1",
-      row: "row-span-2",
-    },
+    
 
     {
       img: "/FinalImage/indianWeed/6.webp",
@@ -268,6 +263,7 @@ const galleryData = {
       col: "col-span-1",
       row: "row-span-2",
     },
+    
 
     {
       img: "/FinalImage/indianWeed/8.webp",
@@ -309,21 +305,27 @@ const galleryData = {
     },
 
     {
-      img: "/FinalImage/Sang/4.webp",
+      img: "/FinalImage/Sang/s1.jpg",
       col: "col-span-2",
-      row: "row-span-2",
+      row: "row-span-3",
     },
 
     {
-      img: "/FinalImage/Sang/5.webp",
+      img: "/FinalImage/Sang/s2.jpg",
       col: "col-span-1",
-      row: "row-span-2",
+      row: "row-span-3",
     },
 
     {
       img: "/FinalImage/Sang/6.webp",
       col: "col-span-2",
       row: "row-span-3",
+    },
+    {
+      type: "label",
+      text: "Bright & Colourful (Indian or Western)",
+      col: "col-span-2 lg:col-span-1",
+      row: "row-span-2",
     },
   ],
 
@@ -346,6 +348,12 @@ const galleryData = {
       col: "col-span-1",
       row: "row-span-2",
     },
+    {
+      type: "label",
+      text: "Black Tie",
+      col: "col-span-2 lg:col-span-1",
+      row: "row-span-2",
+    },
 
     {
       img: "/FinalImage/white/3.webp",
@@ -354,9 +362,9 @@ const galleryData = {
     },
 
     {
-      img: "/FinalImage/white/4.webp",
-      col: "col-span-2",
-      row: "row-span-2",
+      img: "/FinalImage/white/w1.jpg",
+      col: "col-span-1",
+      row: "row-span-3",
     },
 
     {
@@ -364,6 +372,7 @@ const galleryData = {
       col: "col-span-1",
       row: "row-span-2",
     },
+    
   ],
 };
 
@@ -472,18 +481,6 @@ export default function Page() {
       >
         To help you celebrate in style, we’ve put together a wardrobe guide for
         each event. We can’t wait to see you in your best!
-        <br />
-        <br />
-        and please include the dress code for each event in the grid style that
-        we’re using:
-        <br />
-        <br />
-        <span className="uppercase">White Wedding</span> : Black Tie
-        <br />
-        <span className="uppercase">Sangeet</span> : Bright & Colourful (Indian
-        or Western)
-        <br />
-        <span className="uppercase">Indian Wedding</span> : Indian Regal
       </p>
       {/* CATEGORY NAV */}
 
@@ -564,6 +561,8 @@ export default function Page() {
                       lg:text-[2rem]
                       max-sm:text-[2rem]
                       // font-black
+                      px-10
+                      text-center
                       Font_Q
                       font-normal
                         uppercase
@@ -590,6 +589,7 @@ export default function Page() {
                       w-full
                       h-full
                       object-cover
+                       object-top
                       transition-transform
                       duration-700
                       group-hover:scale-105
