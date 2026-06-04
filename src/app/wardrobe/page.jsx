@@ -212,70 +212,50 @@ import { HiArrowRight } from "react-icons/hi2";
 import gsap from "gsap";
 
 const galleryData = {
-  "Indian Wedding": [
+  "White Wedding": [
     {
       type: "label",
-      text: "Indian Wedding",
+      text: "White Wedding",
       col: "col-span-2 lg:col-span-1",
       row: "row-span-2",
     },
 
     {
-      img: "/FinalImage/indianWeed/1.webp",
+      img: "/FinalImage/white/1.webp",
       col: "col-span-2",
       row: "row-span-4",
     },
 
     {
-      img: "/FinalImage/indianWeed/2.webp",
+      img: "/FinalImage/white/2.webp",
       col: "col-span-1",
       row: "row-span-2",
     },
     {
       type: "label",
-      text: "Indian Regal",
+      text: "white wedding: Black Tie",
       col: "col-span-2 lg:col-span-1",
       row: "row-span-2",
     },
 
     {
-      img: "/FinalImage/indianWeed/4.webp",
+      img: "/FinalImage/white/3.webp",
       col: "col-span-1",
       row: "row-span-2",
     },
 
     {
-      img: "/FinalImage/indianWeed/5.webp",
+      img: "/FinalImage/white/w1.jpg",
       col: "col-span-1",
-      row: "row-span-2",
-    },
-
-    
-
-    {
-      img: "/FinalImage/indianWeed/6.webp",
-      col: "col-span-2",
-      row: "row-span-2",
+      row: "row-span-3",
     },
 
     {
-      img: "/FinalImage/indianWeed/7.webp",
+      img: "/FinalImage/white/5.webp",
       col: "col-span-1",
       row: "row-span-2",
     },
     
-
-    {
-      img: "/FinalImage/indianWeed/8.webp",
-      col: "col-span-2",
-      row: "row-span-4",
-    },
-
-    // {
-    //   img: "/FinalImage/indianWeed/9.webp",
-    //   col: "col-span-1",
-    //   row: "row-span-2",
-    // },
   ],
 
   Sangeet: [
@@ -323,61 +303,83 @@ const galleryData = {
     },
     {
       type: "label",
-      text: "Bright & Colourful (Indian or Western)",
+      text: "Sangeet: Bright & Colourful (Indian or Western)",
       col: "col-span-2 lg:col-span-1",
       row: "row-span-2",
     },
   ],
 
-  "White Wedding": [
+   "Indian Wedding": [
     {
       type: "label",
-      text: "White Wedding",
+      text: "Indian Wedding",
       col: "col-span-2 lg:col-span-1",
       row: "row-span-2",
     },
 
     {
-      img: "/FinalImage/white/1.webp",
+      img: "/FinalImage/indianWeed/1.webp",
       col: "col-span-2",
       row: "row-span-4",
     },
 
     {
-      img: "/FinalImage/white/2.webp",
+      img: "/FinalImage/indianWeed/2.webp",
       col: "col-span-1",
       row: "row-span-2",
     },
     {
       type: "label",
-      text: "Black Tie",
+      text: "Indian Wedding: Indian Regal",
       col: "col-span-2 lg:col-span-1",
       row: "row-span-2",
     },
 
     {
-      img: "/FinalImage/white/3.webp",
+      img: "/FinalImage/indianWeed/4.webp",
       col: "col-span-1",
       row: "row-span-2",
     },
 
     {
-      img: "/FinalImage/white/w1.jpg",
+      img: "/FinalImage/indianWeed/5.webp",
       col: "col-span-1",
-      row: "row-span-3",
+      row: "row-span-2",
+    },
+
+    
+
+    {
+      img: "/FinalImage/indianWeed/6.webp",
+      col: "col-span-2",
+      row: "row-span-2",
     },
 
     {
-      img: "/FinalImage/white/5.webp",
+      img: "/FinalImage/indianWeed/7.webp",
       col: "col-span-1",
       row: "row-span-2",
     },
     
+
+    {
+      img: "/FinalImage/indianWeed/8.webp",
+      col: "col-span-2",
+      row: "row-span-4",
+    },
+
+    // {
+    //   img: "/FinalImage/indianWeed/9.webp",
+    //   col: "col-span-1",
+    //   row: "row-span-2",
+    // },
   ],
+
+ 
 };
 
 export default function Page() {
-  const [active, setActive] = useState("Indian Wedding");
+  const [active, setActive] = useState("White Wedding");
   const gridRef = useRef(null);
 
   const changeCategory = (category) => {
