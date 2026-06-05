@@ -25,7 +25,7 @@ const SectionMain = () => {
           {/* Oval Image */}
          
             <img
-              src="/FinalImage/h3.webp"
+              src="/FinalImage/w1.webp"
               alt="IMG"
               className="w-full h-full object-cover"
             />
@@ -46,7 +46,7 @@ const SectionMain = () => {
       <div className=" sm:absolute sm:left-0 max-sm:pt-5 sm:bottom-[10%] w-full sm:w-[25%]  px-[20px] flex flex-col gap-10">
         <div className="w-[50%] max-sm:hidden aspect-square overflow-hidden max-sm:border-[2vw] sm:border-[0.5vw] border-[#F9DE85]">
           <img
-            src={`/FinalImage/h2.webp`}
+            src={`/FinalImage/23.webp`}
             className="w-full h-full object-cover object-center"
             alt="IMG"
           />

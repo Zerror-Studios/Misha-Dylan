@@ -17,7 +17,7 @@ const events = [
     transfer: "Transfers to Villa Corti will begin at 4:30 PM.",
     accent: "White",
     index: "01",
-    url: `/FinalImage/h4.webp`,
+    url: `/FinalImage/VillaCorti.webp`,
   },
   {
     date: "18 September",
@@ -27,21 +27,21 @@ const events = [
     transfer: `Transfers to Villa Palmieri will begin at 4:30 PM. Followed by Afterparty at Auberge Hotel`,
     accent: "Evening",
     index: "02",
-    url: `/FinalImage/36.webp`,
+    url: `/FinalImage/VillaPalmieri.webp`,
   },
   {
     date: "19 September",
     title: "Indian Wedding",
     time: "3:00 PM – 5:00 PM",
     venue: "Villa Collazzi",
-    transfer: "Transfers to Villa Collazzi will begin at 2:00 PM. 3:00 PM - Baraat Assembly, 5:00 PM - Wedding Ceremony",
+    transfer: "Transfers to Villa Collazzi will begin at 2:00 PM.",
     accent: "Indian",
     index: "03",
     subEvents: [
       { time: "3:00 PM", name: "Baraat Assembly" },
       { time: "5:00 PM", name: "Wedding Ceremony" },
     ],
-    url: `/FinalImage/5.webp`,
+    url: `/FinalImage/VillaCollazzi.webp`,
   },
 ];
 
@@ -81,16 +81,16 @@ export default function FeaturedEvents() {
       {/* Heading */}
       <div className="w-[92%] mx-auto flex items-end justify-between max-sm:justify-center mb-[4vw]">
         <div>
-          <h2 className="headingAnim text-[#1f5352] uppercase  leading-none Font_Q text-[5vw] sm:text-[4vw]">
+          <h2 className="headingAnim text-[#016342] uppercase  leading-none Font_Q text-[5vw] sm:text-[4vw]">
             Wedding Itinerary
           </h2>
 
-          {/* <p className="headingAnim text-[#1f5352] text-[1rem] sm:text-[1.1vw] mt-[0.8vw] uppercase tracking-[0.08vw]">
+          {/* <p className="headingAnim text-[#016342] text-[1rem] sm:text-[1.1vw] mt-[0.8vw] uppercase tracking-[0.08vw]">
             places that stay with you
           </p> */}
         </div>
 
-        {/* <div className="hidden sm:flex items-center gap-[1vw] text-[#1f5352]">
+        {/* <div className="hidden sm:flex items-center gap-[1vw] text-[#016342]">
           <span className="text-[2vw] cursor-pointer">←</span>
           <span className="text-[2vw] cursor-pointer">→</span>
         </div> */}
@@ -118,7 +118,7 @@ export default function FeaturedEvents() {
             </div>
 
             {/* Content */}
-            <div className="pt-[1.2vw] text-[#1f5352] max-sm:pt-[5vw]">
+            <div className="pt-[1.2vw] text-[#016342] max-sm:pt-[5vw]">
               <div className="uppercase text-[0.9rem] Font_Q sm:text-[0.8vw]  tracking-[0.08vw] w-full flex justify-between items-center ">
                 <p>{item.date} </p>
 
@@ -137,18 +137,19 @@ export default function FeaturedEvents() {
               </div>
 
               {/* Sub Events */}
-              {/* {item.subEvents && (
-                <div className="mt-[1.2vw] border-t border-[#1f5352]/30 pt-[1vw]">
+              {item.subEvents && (
+                <div className="mt-[1.2vw] border-t border-[#016342]/30 pt-[1vw]">
                   {item.subEvents.map((sub, i) => (
                     <div
                       key={i}
                       className="flex items-center justify-between Font_Q text-[0.85rem] sm:text-[0.8vw] uppercase mb-[0.5vw]"
                     >
                       <span>{sub.time}</span>
+                      <span>{sub.name}</span>
                     </div>
                   ))}
                 </div>
-              )} */}
+              )}
             </div>
           </div>
         ))}

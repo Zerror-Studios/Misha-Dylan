@@ -134,11 +134,11 @@ const NavBar = () => {
           {navLinks.map((item, index) => (
             <Link key={index} href={item.path}>
               <div
-                className={`relative text-[16px] Font_YV text-[#1f5352] uppercase cursor-pointer group ${
-                  pathname === item.path ? "border-b border-[#1f5352]" : ""
+                className={`relative text-[16px] Font_YV text-[#016342] uppercase cursor-pointer group ${
+                  pathname === item.path ? "border-b border-[#016342]" : ""
                 }`}
               >
-                <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1f5352] group-hover:w-full duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#016342] group-hover:w-full duration-300"></div>
 
                 {item.name}
               </div>
@@ -151,7 +151,7 @@ const NavBar = () => {
             rel="noopener noreferrer"
             href="https://wa.me/+919910158374"
           >
-            <div className="h-[46px] px-5 text-[16px] text-white Font_YV bg-[#1f5352] flex items-center justify-center cursor-pointer uppercase tracking-wide hover:scale-[0.98] duration-300">
+            <div className="h-[46px] px-5 text-[16px] text-white Font_YV bg-[#016342] flex items-center justify-center cursor-pointer uppercase tracking-wide hover:scale-[0.98] duration-300">
               RSVP HERE
             </div>
           </Link>
@@ -175,7 +175,7 @@ const NavBar = () => {
             <Link key={index} href={item.path} onClick={closeMenu}>
               <div
                 className={`smNavItem opacity-0 translate-y-[20px] text-[1.3rem] uppercase tracking-wide ${
-                  pathname === item.path ? "text-[#952607]" : "text-[#1f5352]"
+                  pathname === item.path ? "text-[#952607]" : "text-[#016342]"
                 }`}
               >
                 {item.name}
@@ -192,7 +192,7 @@ const NavBar = () => {
           onClick={closeMenu}
           className="mt-10"
         >
-          <div className="smNavItem opacity-0 translate-y-[20px] w-full h-[52px] bg-[#1f5352] text-white flex justify-center items-center uppercase tracking-wide">
+          <div className="smNavItem opacity-0 translate-y-[20px] w-full h-[52px] bg-[#016342] text-white flex justify-center items-center uppercase tracking-wide">
             RSVP HERE
           </div>
         </Link>

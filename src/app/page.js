@@ -1,4 +1,3 @@
-
 import Countdown from "@/components/sections/home/Countdown";
 import Hearts from "@/components/sections/home/Hearts";
 import HeroSectionHome from "@/components/sections/NewHome/HeroSectionHome";
@@ -59,11 +58,11 @@ export default function Home() {
         description="Welcome to the official wedding website of Dylan & Misha . Join us in celebrating our special day and explore event details, itinerary, venue information, and RSVP updates."
         url={`${Const.ClientLink}/`}
       />
-    <SectionMain />
-     <HeroSectionHome />
-     {/* <MarqueeGallery /> */}
-     <Countdown />
-     {/* <Hearts /> */}
+      <SectionMain />
+      <HeroSectionHome />
+      {/* <MarqueeGallery /> */}
+      <Countdown />
+      {/* <Hearts /> */}
     </>
   );
 }

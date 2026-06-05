@@ -89,7 +89,7 @@ const HeroSectionHome = () => {
         <div className="w-full h-fit flex justify-center items-center sm:pb-[10vh] overflow-hidden">
           <div className=" w-[60%] sm:w-[18%] aspect-4/5 overflow-hidden relative max-sm:border-[1vw] sm:border-[0.5vw] border-[#F9DE85]">
             <Image fill
-              src={`/FinalImage/h4.webp`}
+              src={`/FinalImage/23.webp`}
               className="w-full h-full object-center object-cover"
               alt="IMG"
             />

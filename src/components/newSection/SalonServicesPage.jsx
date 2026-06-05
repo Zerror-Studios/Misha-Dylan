@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 
 // ── COLORS ────────────────────────────────────────────────────────────────
-const ACCENT = "#1f5352"; // dark green (kept as main accent)
+const ACCENT = "#016342"; // dark green (kept as main accent)
 const BG = "#fff9ed";    // very soft cream (instead of yellow)
 const DARK = "#1a1614";   // deep brown / near‑black
 const LIGHT = "#f0f0f0"; // soft light gray for backgrounds
