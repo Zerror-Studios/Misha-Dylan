@@ -115,7 +115,7 @@ export default function TravelTips() {
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className="border-b border-[#173e3d21] pb-6 group relative"
+              className="border-b border-[#1f535221] pb-6 group relative"
             >
               {/* BUTTON */}
               <button
@@ -153,7 +153,7 @@ export default function TravelTips() {
                       : "0px",
                 }}
               >
-                <div className="mt-4 Font_YV text-[18px] text-[#173e3d]">
+                <div className="mt-4 Font_YV text-[18px] text-[#1f5352]">
                   {faq.answer}
 
                   {(faq.id === 14 || faq.id === 15) && (
@@ -179,7 +179,7 @@ export default function TravelTips() {
               </div>
 
               {/* HOVER LINE */}
-              <div className="w-0 h-px bg-[#173e3d] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#1f5352] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
             </div>
           ))}
         </div>

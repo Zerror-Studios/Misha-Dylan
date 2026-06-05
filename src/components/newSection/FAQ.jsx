@@ -110,7 +110,7 @@ export default function FAQ() {
              <a href="mailto:sonalskushie@gmail.com" >
               <div className=" relative group flex flex-col max-sm:mt-2">
               <p className="Font_YV ">mishadylan@gmail.com</p>
-              <div className="w-0 h-px bg-[#173e3d]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#1f5352]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>
 
@@ -119,14 +119,14 @@ export default function FAQ() {
             <a href="tel:+919358800614">
               <div className=" relative group flex w-fit flex-col max-sm:mt-2">
               <p className="Font_YV ">+91 93588 00614</p>
-              <div className="w-0 h-px bg-[#173e3d]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#1f5352]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>
             <p className="px-2 max-sm:hidden">|</p>
             <a href="tel:+919310069102">
               <div className=" relative group flex w-fit flex-col">
               <p className="Font_YV max-sm:mt-2">+91 93100 69102</p>
-              <div className="w-0 h-px bg-[#173e3d]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#1f5352]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>
           </div>
@@ -136,7 +136,7 @@ export default function FAQ() {
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className="border-b border-[#173e3d21] pb-6 group relative"
+              className="border-b border-[#1f535221] pb-6 group relative"
             >
               {/* BUTTON */}
               <button
@@ -169,7 +169,7 @@ export default function FAQ() {
                       : "0px",
                 }}
               >
-                <div className="mt-4 Font_YV text-[18px] text-[#173e3d]">
+                <div className="mt-4 Font_YV text-[18px] text-[#1f5352]">
                   {faq.answer}
 
                   {(faq.id === 14 || faq.id === 15) && (
@@ -195,7 +195,7 @@ export default function FAQ() {
               </div>
 
               {/* HOVER LINE */}
-              <div className="w-0 h-px bg-[#173e3d] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
+              <div className="w-0 h-px bg-[#1f5352] group-hover:w-full absolute bottom-0 left-0 transition-all duration-200"></div>
             </div>
           ))}
         </div>

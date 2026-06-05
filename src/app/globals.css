@@ -14,7 +14,7 @@
 
 .SEFONT{
   font-family:SEFONT ;
-  -webkit-text-stroke: 5px #173e3d;
+  -webkit-text-stroke: 5px #1f5352;
 }
 
 .SEFONT2{
@@ -106,7 +106,7 @@ p {
 
   .SEFONT{
   font-family:SEFONT ;
-  -webkit-text-stroke: 3px #173e3d;
+  -webkit-text-stroke: 3px #1f5352;
 }
 
 .SEFONT2{
@@ -125,10 +125,11 @@ p {
 
 /* OLD color ----------------------------- */
 .COLOR_BG_RED{
-  background-color: #173e3d;
+  /* background-color: #1f5352; */
+  background-color: #1f5352;
 }
 .COLOR_TEXT_RED{
-  color: #173e3d;
+  color: #1f5352;
 }
 
 

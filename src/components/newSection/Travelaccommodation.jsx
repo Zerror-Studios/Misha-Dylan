@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 // <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 // ─────────────────────────────────────────────────────────────────────────────
 
-const ACCENT = "#173e3d";
+const ACCENT = "#1f5352";
 const BG = "#F9DE85";
 
 const HERO_IMG = `/FinalImage/9.webp`;
@@ -136,7 +136,7 @@ export default function Travelaccommodation() {
 
   return (
     <div
-      className="Font_Q border-b border-[#173e3d]"
+      className="Font_Q border-b border-[#1f5352]"
       style={{
         backgroundColor: BG,
         minHeight: "100vh",
@@ -727,7 +727,7 @@ function AirportCard({ ap }) {
         style={{
           padding: "32px 28px",
           border: `1px solid rgba(197,61,46,${hovered ? "0.4" : "0.15"})`,
-          backgroundColor: hovered ? "#173e3d" : "",
+          backgroundColor: hovered ? "#1f5352" : "",
           transition: "all 0.35s ease",
           cursor: "pointer",
           textAlign: "left",
