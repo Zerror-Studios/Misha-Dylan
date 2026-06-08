@@ -14,26 +14,26 @@ const events = [
     title: "White Wedding",
     time: "5:30 PM",
     venue: "Villa Corti",
-    transfer: "Transfers to Villa Corti will begin at 4:30 PM.",
+    transfer: "Transfers to Villa Corti will begin at 4:30 PM. | 5:30 PM",
     accent: "White",
     index: "01",
     url: `/FinalImage/VillaCorti.webp`,
-     subEvents: [
-      { time: "5:30 PM", name: "" },
-    ],
+    //  subEvents: [
+    //   { time: "", name: "" },
+    // ],
   },
   {
     date: "18 September",
     title: "Cocktails & Canapés",
     time: "7:00 PM",
     venue: "Villa Palmieri",
-    transfer: `Transfers to Villa Palmieri will begin at 4:30 PM. Followed by Afterparty at Auberge Hotel`,
+    transfer: `Transfers to Villa Palmieri will begin at 4:30 PM. Followed by Afterparty at Auberge Hotel | 5:00 PM`,
     accent: "Evening",
     index: "02",
     url: `/FinalImage/VillaPalmieri.webp`,
-     subEvents: [
-      { time: "5:00 PM", name: "" },
-    ],
+    //  subEvents: [
+    //   { time: "", name: "" },
+    // ],
   },
   {
     date: "19 September",

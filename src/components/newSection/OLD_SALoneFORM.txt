@@ -1,0 +1,820 @@
+ {/* ── FORM CONTAINER ── */}
+      {!submitted ? (
+        <div
+          ref={formRef}
+          style={{
+            maxWidth: 720,
+            margin: "0 auto 80px",
+            padding: "0 16px",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          {/* ── STEP INDICATORS ── */}
+          <div
+            style={{ marginBottom: 36, overflowX: "auto", paddingBottom: 10 }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: 12,
+                position: "relative",
+                minWidth: "max-content",
+                maxWidth: "100%",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: 0,
+                  right: 0,
+                  height: 1,
+                  backgroundColor: `rgba(23,62,61,0.15)`,
+                  transform: "translateY(-50%)",
+                  zIndex: 0,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: 0,
+                  width: `${progress}%`,
+                  height: 1,
+                  backgroundColor: ACCENT,
+                  transform: "translateY(-50%)",
+                  zIndex: 0,
+                  transition: "width 0.5s ease",
+                }}
+              />
+              {stepLabels.map((label, i) => (
+                <div
+                  className="mb-4"
+                  key={i}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 6,
+                    zIndex: 1,
+                    minWidth: "80px",
+                    flexShrink: 0,
+                  }}
+                >
+                  <span
+                    className="Font_Q mt-0 mb-2 font-medium"
+                    style={{
+                      fontSize: "clamp(10px, 2vw, 16px)",
+                      letterSpacing: "0.2em",
+                      textTransform: "uppercase",
+                      opacity: i === step ? 1 : 0.35,
+                      transition: "opacity 0.3s",
+                      whiteSpace: "nowrap",
+                      textAlign: "center",
+                    }}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── FORM CARD ── */}
+          <div style={{ padding: "clamp(24px, 5vw, 56px)" }}>
+            <div className="step-body">
+              {/* ── STEP 0: Personal + Stay ── */}
+              {step === 0 && (
+                <div>
+                  <StepHeading
+                    title="Personal & Stay"
+                    subtitle="Tell us about you and your visit"
+                  />
+
+                  {/* Name + Contact */}
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(240px, 1fr))",
+                      gap: 20,
+                      marginBottom: 28,
+                    }}
+                  >
+                    <Field label="Full Name" error={errors.fullName}>
+                      <Input
+                        placeholder="Your full name"
+                        value={form.fullName}
+                        onChange={(v) => set("fullName", v)}
+                      />
+                    </Field>
+                    <Field
+                      label="Email ID or Contact"
+                      error={errors.contact}
+                      // note="e.g. email or phone"
+                    >
+                      <Input
+                        placeholder="email or phone"
+                        value={form.contact}
+                        onChange={(v) => set("contact", v)}
+                      />
+                    </Field>
+                  </div>
+
+                  {/* Hotel */}
+                  <div style={{ marginBottom: 24 }}>
+                    <Field
+                      label="Which hotel will you be staying at?"
+                      error={errors.hotel}
+                    >
+                      <Select
+                        value={form.hotel}
+                        onChange={(v) => set("hotel", v)}
+                        options={HOTELS}
+                        placeholder="Select your hotel"
+                      />
+                    </Field>
+                  </div>
+
+                  {/* Dates */}
+                  <Field
+                    label="Date of Service"
+                    note={
+                      <span
+                        style={{
+                          fontSize: "clamp(12px, 2vw, 13px)",
+                          fontWeight: 400,
+                          letterSpacing: "0.05em",
+                          color: ACCENT,
+                        }}
+                      >
+                        Multiple dates allowed
+                      </span>
+                    }
+                    error={errors.dates}
+                  >
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns:
+                          "repeat(auto-fit, minmax(100px, 1fr))",
+                        gap: 12,
+                        marginTop: 8,
+                      }}
+                    >
+                      {DATES.map((d) => {
+                        const parts = d.split(" ");
+                        const day = parts[0];
+                        const month = parts[1]?.replace(",", "");
+                        const selected = form.dates.includes(d);
+                        return (
+                          <button
+                            key={d}
+                            onClick={() => toggleArr("dates", d)}
+                            style={{
+                              padding: "18px 8px",
+                              border: `1px solid ${ACCENT}`,
+                              borderRadius: 8,
+                              backgroundColor: selected
+                                ? ACCENT
+                                : "transparent",
+                              color: selected ? BG : ACCENT,
+                              cursor: "pointer",
+                              transition: "all 0.25s ease",
+                              display: "flex",
+                              flexDirection: "column",
+                              alignItems: "center",
+                              gap: 4,
+                              minHeight: "80px",
+                              boxShadow: selected
+                                ? `0 2px 6px rgba(23,62,61,0.2)`
+                                : "0 1px 3px rgba(23,62,61,0.05)",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform =
+                                "translateY(-2px)";
+                              e.currentTarget.style.boxShadow = `0 4px 10px rgba(23,62,61,0.15)`;
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = "translateY(0)";
+                              e.currentTarget.style.boxShadow = selected
+                                ? `0 2px 6px rgba(23,62,61,0.2)`
+                                : "0 1px 3px rgba(23,62,61,0.05)";
+                            }}
+                          >
+                            <span
+                              className="Font_Q"
+                              style={{
+                                fontSize: "clamp(22px, 4vw, 30px)",
+                                fontWeight: 300,
+                                // fontStyle: "italic",
+                                // lineHeight: 1,
+                              }}
+                            >
+                              {day}
+                            </span>
+                            {/* <span
+                              className="Font_YV"
+                              style={{
+                                fontSize: "clamp(8px, 1.5vw, 10px)",
+                                letterSpacing: "0.35em",
+                                textTransform: "uppercase",
+                                opacity: selected ? 0.75 : 0.4,
+                              }}
+                            >
+                              {month}
+                            </span> */}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </Field>
+                </div>
+              )}
+
+              {/* ── STEP 1: Services ── */}
+              {step === 1 && (
+                <div>
+                  <StepHeading
+                    num="02"
+                    title="Services"
+                    subtitle="Select all that apply"
+                  />
+                  <Field
+                    label="Nature of Service"
+                    note={
+                      <span
+                        style={{
+                          fontSize: "clamp(12px, 2vw, 13px)",
+                          fontWeight: 400,
+                          letterSpacing: "0.05em",
+                          color: ACCENT,
+                        }}
+                      >
+                        Multiple selections allowed
+                      </span>
+                    }
+                    error={errors.services}
+                  >
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns:
+                          "repeat(auto-fit, minmax(140px, 1fr))",
+                        gap: 14,
+                        marginTop: 8,
+                      }}
+                    >
+                      {SERVICES.map((s) => (
+                        <ServiceCard
+                          key={s}
+                          label={s}
+                          selected={form.services.includes(s)}
+                          onToggle={() => toggleArr("services", s)}
+                        />
+                      ))}
+                    </div>
+                  </Field>
+                </div>
+              )}
+
+              {/* ── STEP 2: Details ── */}
+              {step === 2 && (
+                <div>
+                  <StepHeading
+                    num="03"
+                    title="Details"
+                    subtitle="Help us prepare the perfect look"
+                  />
+
+                  {needsHair && (
+                    <div style={{ marginBottom: 32 }}>
+                      {/* <SectionRule label="Hair Style" /> */}
+                      <div
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns:
+                            "repeat(auto-fit, minmax(240px, 1fr))",
+                          gap: 20,
+                          marginTop: 20,
+                        }}
+                      >
+                        <Field
+                          label="Hair Length"
+                          error={errors.hairLength}
+                          note={
+                            <span
+                              style={{
+                                fontSize: "clamp(12px, 2vw, 13px)",
+                                fontWeight: 400,
+                                color: ACCENT,
+                              }}
+                            >
+                              Required
+                            </span>
+                          }
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: 8,
+                            }}
+                          >
+                            {["Short", "Medium", "Long"].map((l) => (
+                              <RadioPill
+                                key={l}
+                                label={l}
+                                selected={form.hairLength === l}
+                                onSelect={() => set("hairLength", l)}
+                                block
+                              />
+                            ))}
+                          </div>
+                        </Field>
+                        <Field
+                          label="Hair Extensions?"
+                          error={errors.hairExtensions}
+                          note={
+                            <span
+                              style={{
+                                fontSize: "clamp(12px, 2vw, 13px)",
+                                fontWeight: 400,
+                                color: ACCENT,
+                              }}
+                            >
+                              Required
+                            </span>
+                          }
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: 8,
+                            }}
+                          >
+                            {["Yes", "No"].map((v) => (
+                              <RadioPill
+                                key={v}
+                                label={v}
+                                selected={form.hairExtensions === v}
+                                onSelect={() => set("hairExtensions", v)}
+                                block
+                              />
+                            ))}
+                          </div>
+                        </Field>
+                      </div>
+                    </div>
+                  )}
+
+                  {needsMakeup && (
+                    <div style={{ marginBottom: 32 }}>
+                      {/* <SectionRule label="Make-Up" /> */}
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 20,
+                          marginTop: 20,
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: "grid",
+                            gridTemplateColumns:
+                              "repeat(auto-fit, minmax(260px, 1fr))",
+                            gap: 20,
+                            alignItems: "start",
+                          }}
+                        >
+                          <Field
+                            label="Makeup Brief"
+                            error={errors.makeupBrief}
+                          >
+                            <Textarea
+                              placeholder="Describe your desired look..."
+                              value={form.makeupBrief}
+                              onChange={(v) => set("makeupBrief", v)}
+                              rows={3}
+                            />
+                          </Field>
+                          <Field
+                            label="Add Lashes?"
+                            error={errors.lashes}
+                            note={
+                              <span
+                                style={{
+                                  fontSize: "clamp(12px, 2vw, 13px)",
+                                  fontWeight: 400,
+                                  color: ACCENT,
+                                }}
+                              >
+                                Required
+                              </span>
+                            }
+                          >
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: 8,
+                              }}
+                            >
+                              {["Yes", "No"].map((v) => (
+                                <RadioPill
+                                  key={v}
+                                  label={v}
+                                  selected={form.lashes === v}
+                                  onSelect={() => set("lashes", v)}
+                                  block
+                                />
+                              ))}
+                            </div>
+                          </Field>
+                        </div>
+
+                        <Field
+                          label="Upload Makeup References"
+                          note={
+                            <span
+                              style={{
+                                fontSize: "clamp(12px, 2vw, 13px)",
+                                fontWeight: 400,
+                                color: ACCENT,
+                              }}
+                            >
+                              Up to 5 images – drag & drop or click
+                            </span>
+                          }
+                        >
+                          <div
+                            onDragOver={(e) => {
+                              e.preventDefault();
+                              setDragOver(true);
+                            }}
+                            onDragLeave={() => setDragOver(false)}
+                            onDrop={(e) => {
+                              e.preventDefault();
+                              setDragOver(false);
+                              handleFileChange(e.dataTransfer.files);
+                            }}
+                            onClick={() =>
+                              document.getElementById("makeup-upload").click()
+                            }
+                            style={{
+                              border: `1px dashed ${ACCENT}`,
+                              borderRadius: 8,
+                              padding: "24px 16px",
+                              textAlign: "center",
+                              cursor: "pointer",
+                              backgroundColor: dragOver
+                                ? `rgba(23,62,61,0.05)`
+                                : "transparent",
+                              transition: "all 0.3s",
+                              boxShadow: dragOver
+                                ? `0 2px 8px rgba(23,62,61,0.12)`
+                                : "0 1px 3px rgba(23,62,61,0.05)",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform =
+                                "translateY(-1px)";
+                              e.currentTarget.style.boxShadow =
+                                "0 3px 12px rgba(23,62,61,0.16)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = "translateY(0)";
+                              e.currentTarget.style.boxShadow = dragOver
+                                ? "0 2px 8px rgba(23,62,61,0.12)"
+                                : "0 1px 3px rgba(23,62,61,0.05)";
+                            }}
+                          >
+                            <svg
+                              width="28"
+                              height="28"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke={ACCENT}
+                              strokeWidth="1.2"
+                              style={{
+                                opacity: 0.4,
+                                margin: "0 auto 10px",
+                                display: "block",
+                              }}
+                            >
+                              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                              <polyline points="17 8 12 3 7 8" />
+                              <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                            <p
+                              className="Font_YV"
+                              style={{
+                                fontSize: "clamp(12px, 1.5vw, 14px)",
+                                opacity: 0.6,
+                                margin: 0,
+                              }}
+                            >
+                              {form.makeupRefs.length > 0
+                                ? `${form.makeupRefs.length} file(s) selected`
+                                : "Drag & drop or click to upload"}
+                            </p>
+                            <input
+                              id="makeup-upload"
+                              type="file"
+                              multiple
+                              accept="image/*"
+                              style={{ display: "none" }}
+                              onChange={(e) => handleFileChange(e.target.files)}
+                            />
+                          </div>
+                          {form.makeupRefs.length > 0 && (
+                            <div
+                              style={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                gap: 8,
+                                marginTop: 10,
+                              }}
+                            >
+                              {form.makeupRefs.map((f, i) => (
+                                <span
+                                  key={i}
+                                  style={{
+                                    fontSize: "clamp(12px, 2vw, 14px)",
+                                    padding: "4px 10px",
+                                    border: `1px solid ${ACCENT}`,
+                                    borderRadius: 6,
+                                    color: ACCENT,
+                                    opacity: 0.7,
+                                  }}
+                                >
+                                  {f.name}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </Field>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Ready time + Notes */}
+                  <div>
+                    {/* <SectionRule label="Timing & Notes" /> */}
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns:
+                          "repeat(auto-fit, minmax(240px, 1fr))",
+                        gap: 20,
+                        marginTop: 20,
+                      }}
+                    >
+                      <Field
+                        label="What is your ready time?"
+                        error={errors.readyTime}
+                        // note={
+                        //   <span
+                        //     style={{
+                        //       fontSize: "clamp(12px, 2vw, 13px)",
+                        //       fontWeight: 400,
+                        //       color: ACCENT,
+                        //     }}
+                        //   >
+                        //     e.g. 4:00 PM
+                        //   </span>
+                        // }
+                      >
+                        <Input
+                          placeholder="e.g. 4:00 PM"
+                          value={form.readyTime}
+                          onChange={(v) => set("readyTime", v)}
+                        />
+                      </Field>
+                      <Field
+                        label="Further Notes"
+                        // note={
+                        //   <span
+                        //     style={{
+                        //       fontSize: "clamp(12px, 2vw, 13px)",
+                        //       fontWeight: 400,
+                        //       color: ACCENT,
+                        //     }}
+                        //   >
+                        //     e.g. "Sensitive Skin"
+                        //   </span>
+                        // }
+                      >
+                        <Textarea
+                          placeholder="Any additional notes..."
+                          value={form.notes}
+                          onChange={(v) => set("notes", v)}
+                          rows={3}
+                        />
+                      </Field>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* ── STEP 3: Review ── */}
+              {step === 3 && (
+                <div>
+                  <StepHeading
+                    num="04"
+                    title="Review"
+                    subtitle="Confirm your booking details"
+                  />
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(280px, 1fr))",
+                      border: `1px solid ${ACCENT}`,
+                      borderRadius: 8,
+                      overflow: "hidden",
+                    }}
+                  >
+                    {[
+                      ["Full Name", form.fullName],
+                      ["Contact", form.contact],
+                      ["Hotel", form.hotel],
+                      ["Dates", form.dates.join(", ")],
+                      ["Services", form.services.join(", ")],
+                      ["Ready Time", form.readyTime],
+                      ...(needsHair
+                        ? [
+                            ["Hair Length", form.hairLength],
+                            ["Hair Extensions", form.hairExtensions],
+                          ]
+                        : []),
+                      ...(needsMakeup
+                        ? [
+                            ["Makeup Brief", form.makeupBrief],
+                            ["Add Lashes", form.lashes],
+                          ]
+                        : []),
+                      ...(form.notes
+                        ? [
+                            ["Notes", form.notes],
+                            ["", ""],
+                          ]
+                        : []),
+                    ].map(([k, v], i) => (
+                      <div
+                        key={i}
+                        style={{
+                          padding: "14px 16px",
+                          borderBottom:
+                            i < 9 ? `1px solid rgba(23,62,61,0.12)` : "none",
+                          borderRight:
+                            i % 2 === 0
+                              ? `1px solid rgba(23,62,61,0.12)`
+                              : "none",
+                          backgroundColor:
+                            i % 2 === 0
+                              ? "rgba(23,62,61,0.015)"
+                              : "transparent",
+                        }}
+                      >
+                        {k && (
+                          <>
+                            <p
+                              className="Font_YV"
+                              style={{
+                                margin: "0 0 5px",
+                                fontSize: "clamp(10px, 1.5vw, 14px)",
+                                letterSpacing: "0.35em",
+                                textTransform: "uppercase",
+                                // opacity: 0.35,
+                              }}
+                            >
+                              {k}
+                            </p>
+                            <p
+                              className="Font_Q"
+                              style={{
+                                margin: 0,
+                                fontSize: "clamp(16px, 3vw, 20px)",
+                                fontWeight: 300,
+                                fontStyle: "italic",
+                                color: ACCENT,
+                                lineHeight: 1.3,
+                              }}
+                            >
+                              {v || "—"}
+                            </p>
+                          </>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <p
+                    className="Font_YV"
+                    style={{
+                      fontSize: "clamp(13px, 2vw, 18px)",
+                      // opacity: 0.4,
+                      marginTop: 24,
+                      lineHeight: 1.7,
+                      padding: "0 10px",
+                    }}
+                  >
+                    Our salon team will confirm your appointments and reach out
+                    with any questions.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* ── NAVIGATION BUTTONS ── */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: 36,
+                paddingTop: 24,
+                borderTop: `1px solid rgba(23,62,61,0.15)`,
+                flexWrap: "wrap",
+                gap: 12,
+              }}
+            >
+              {step > 0 ? (
+                <button
+                  onClick={prev}
+                  style={{
+                    ...ghostBtnStyle,
+                    flex: "1 1 auto",
+                    minWidth: "120px",
+                    maxWidth: "200px",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-1px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 2px 6px rgba(23,62,61,0.12)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  ← Back
+                </button>
+              ) : (
+                <div />
+              )}
+              {step < TOTAL_STEPS - 1 ? (
+                <button
+                  onClick={next}
+                  style={{
+                    ...solidBtnStyle,
+                    flex: "1 1 auto",
+                    minWidth: "140px",
+                    maxWidth: "220px",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-1px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 3px 10px rgba(23,62,61,0.2)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  Continue
+                </button>
+              ) : (
+                <button
+                  onClick={handleSubmit}
+                  style={{
+                    ...solidBtnStyle,
+                    flex: "1 1 auto",
+                    minWidth: "160px",
+                    maxWidth: "240px",
+                    paddingLeft: 24,
+                    paddingRight: 24,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-1px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 3px 10px rgba(23,62,61,0.25)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  Submit Booking
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <SuccessScreen name={form.fullName} />
+      )}

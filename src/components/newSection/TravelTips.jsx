@@ -16,11 +16,7 @@ If you are travelling from the U.S., UK, or UAE, you may need a plug adapter to 
     id: 2,
     question: "Weather in Florence (September) ",
     answer:
-      `September is one of the most beautiful times to visit Florence.
-Expect:
-Daytime: -24–28°C (75–82°F),
-Evenings: -15–18°C (59–64°F),
-Days are generally warm and sunny, with pleasant evenings — perfect for outdoor celebrations.
+      `September in Florence is a blend of warm sunshine and crisp charm, with highs around 26ºC and evenings dipping to 15ºC. Bask in the golden winter sun by day and keep a stylish shawl or light jacket handy for those cool, starlit nights.
 
 `,
   },
