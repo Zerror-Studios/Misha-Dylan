@@ -125,21 +125,19 @@ export default function FeaturedEvents() {
 
             {/* Content */}
             <div className="pt-[1.2vw] text-[#016342] max-sm:pt-[5vw]">
-              <div className="uppercase text-[0.9rem] Font_Q sm:text-[0.8vw]  tracking-[0.08vw] w-full flex justify-between items-center ">
-                <p>{item.date} </p>
-
-                <p className="ml-auto flex justify-center items-center"> <FaLocationDot className="mr-2" /> {item.venue} </p>
+              <div className="uppercase text-[0.9rem] Font_Q   w-full flex  justify-between items-center ">
+                <span>{item.date} </span>
+                <span className="ml-auto flex justify-center items-center "> <FaLocationDot className="mr-2" /> {item.venue} </span>
               </div>
 
               <h2 className="uppercase leading-[1.2] Font_Q mt-[1vw] font-serif text-[1.5rem] sm:text-[1.7vw]">
                 {item.title}
               </h2>
 
-              <div className="mt-[1vw] space-y-[0.3vw] flex ">
-                <p className="text-[0.85rem ] Font_Q sm:text-[0.8vw] leading-[1.5] flex ">
+              <div className="mt-[0.5vw] space-y-[0.3vw] flex ">
+                <span className="text-[0.85rem ] Font_Q sm:text-[0.8vw] leading-[1.5] flex ">
                   {item.transfer}
-
-                </p>
+                </span>
               </div>
 
               {/* Sub Events */}
