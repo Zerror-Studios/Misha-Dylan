@@ -46,10 +46,10 @@ export default function Footer() {
             </a>
           </p>
 
-          <p className="Font_YV text-xs md:text-sm">
+          {/* <p className="Font_YV text-xs md:text-sm">
             <span className="font-medium Font_Q">Logistics Team :</span> +91
             XXXXXXXX
-          </p>
+          </p> */}
 
           <p className="text-xs md:text-sm">
             <span className="font-medium Font_Q">Email ID :</span>{" "}

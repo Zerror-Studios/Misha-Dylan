@@ -298,10 +298,10 @@ export default function Travelaccommodation() {
                   // backgroundColor: "rgba(197,61,46,0.03)",
                 }}
               >
-                <p className="Font_YV font-semibold mb-5">
+                {/* <p className="Font_YV font-semibold mb-5">
                   Local Logistics Partner
-                </p>
-                <div
+                </p> */}
+                {/* <div
                   className="logistics-grid"
                   style={{
                     display: "grid",
@@ -319,7 +319,7 @@ export default function Travelaccommodation() {
                       <p className="Font_YV mt-2">{v}</p>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
             <div
