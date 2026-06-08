@@ -135,9 +135,9 @@ export default function FeaturedEvents() {
               </h2>
 
               <div className="mt-[0.5vw] space-y-[0.3vw] flex ">
-                <span className="text-[0.85rem ] Font_Q sm:text-[0.8vw] leading-[1.5] flex ">
+                <p className="text-[0.85rem ] Font_Q sm:text-[0.8vw] leading-[1.5] flex ">
                   {item.transfer}
-                </span>
+                </p>
               </div>
 
               {/* Sub Events */}
