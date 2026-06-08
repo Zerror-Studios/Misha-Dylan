@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react";
 
 // ── COLORS ────────────────────────────────────────────────────────────────
 const ACCENT = "#016342"; // dark green (kept as main accent)
-const BG = "#fff9ed";    // very soft cream (instead of yellow)
-const DARK = "#1a1614";   // deep brown / near‑black
+const BG = "#fff9ed"; // very soft cream (instead of yellow)
+const DARK = "#1a1614"; // deep brown / near‑black
 const LIGHT = "#f0f0f0"; // soft light gray for backgrounds
 
 // ── OPTIONS ───────────────────────────────────────────────────────────────
@@ -24,6 +24,70 @@ const DATES = [
 ];
 
 const SERVICES = ["Hair Style", "Make-Up", "Saree Draping"];
+
+const SALON_GROUPS = [
+  {
+    label: "Near Auberge (Collegio alla Querce)",
+    salons: [
+      {
+        name: "Giulia Papke Make-Up",
+        instagram: "https://www.instagram.com/giuliapapke_makeupartist/",
+        website: "https://www.giuliapapke.it/",
+        email: "giulia.papke@gmail.com",
+      },
+      {
+        name: "Hairforce Firenze",
+        note: "Multiple Outlets",
+        website: "https://hairforce.it/it/",
+        email: "info@hairforce.it",
+      },
+      {
+        name: "Jojóstyle Hair & Beauty",
+        instagram: "https://www.instagram.com/jojostyle_hairbeauty/",
+        contact: "+39 3428391857",
+        contactNote: "WhatsApp",
+      },
+    ],
+  },
+  {
+    label: "Near The St. Regis Florence",
+    salons: [
+      {
+        name: "Wave Salon Firenze",
+        instagram: "https://www.instagram.com/wave_parrucchierifirenze/",
+        website: "https://www.parrucchieriwavefirenze.com/en-gb",
+        contact: "+39 055 265 4650",
+      },
+      {
+        name: "Elenora Gentile Luxury Hair Spa",
+        website: "https://www.eleonoragentile.com/en/",
+        contact: "+39 055 051 6047",
+      },
+      {
+        name: "Pistolesi Group",
+        instagram: "https://www.instagram.com/pistolesigroupofficial/",
+        website: "https://www.pistolesigroup.it/en/",
+        contact: "334 2449019",
+      },
+    ],
+  },
+  {
+    label: "Near The Westin Excelsior, Florence",
+    salons: [
+      {
+        name: "Wave Salon Firenze",
+        instagram: "https://www.instagram.com/wave_parrucchierifirenze/",
+        website: "https://www.parrucchieriwavefirenze.com/en-gb",
+        contact: "+39 055 265 4650",
+      },
+      {
+        name: "Elenora Gentile Luxury Hair Spa",
+        website: "https://www.eleonoragentile.com/en/",
+        contact: "+39 055 051 6047",
+      },
+    ],
+  },
+];
 
 // Steps: 0=personal+stay, 1=services, 2=details, 3=review
 const TOTAL_STEPS = 4;
@@ -60,14 +124,21 @@ export default function SalonServicesPage() {
         gsap.fromTo(
           headerRef.current.querySelectorAll(".hdr-anim"),
           { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.12, duration: 1.1, ease: "power3.out", delay: 0.2 }
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.12,
+            duration: 1.1,
+            ease: "power3.out",
+            delay: 0.2,
+          },
         );
       }
       if (formRef.current) {
         gsap.fromTo(
           formRef.current,
           { y: 60, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", delay: 0.5 }
+          { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", delay: 0.5 },
         );
       }
     });
@@ -80,7 +151,7 @@ export default function SalonServicesPage() {
         gsap.fromTo(
           formRef.current.querySelector(".step-body"),
           { x: 30, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
+          { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" },
         );
       });
     }
@@ -90,7 +161,10 @@ export default function SalonServicesPage() {
   const toggleArr = (key, val) => {
     setForm((f) => {
       const arr = f[key];
-      return { ...f, [key]: arr.includes(val) ? arr.filter((v) => v !== val) : [...arr, val] };
+      return {
+        ...f,
+        [key]: arr.includes(val) ? arr.filter((v) => v !== val) : [...arr, val],
+      };
     });
   };
 
@@ -134,7 +208,12 @@ export default function SalonServicesPage() {
 
   const progress = ((step + 1) / TOTAL_STEPS) * 100;
 
-  const stepLabels = ["1. Personal & Stay", "2. Services", "3. Details", "4. Review"];
+  const stepLabels = [
+    "1. Personal & Stay",
+    "2. Services",
+    "3. Details",
+    "4. Review",
+  ];
 
   return (
     <div
@@ -176,7 +255,6 @@ export default function SalonServicesPage() {
         <h2
           className="hdr-anim Font_Q uppercase"
           style={{
-          
             color: ACCENT,
           }}
         >
@@ -188,12 +266,13 @@ export default function SalonServicesPage() {
             color: ACCENT,
             lineHeight: 1.6,
             maxWidth: 500,
-           
+
             padding: "0 10px",
           }}
         >
-          Reserve your hair, make-up, and styling appointments for the celebration. Please complete the form
-          below and our team will be in touch.
+          Reserve your hair, make-up, and styling appointments for the
+          celebration. Please complete the form below and our team will be in
+          touch.
         </p>
       </header>
 
@@ -210,7 +289,9 @@ export default function SalonServicesPage() {
           }}
         >
           {/* ── STEP INDICATORS ── */}
-          <div style={{ marginBottom: 36, overflowX: "auto", paddingBottom: 10 }}>
+          <div
+            style={{ marginBottom: 36, overflowX: "auto", paddingBottom: 10 }}
+          >
             <div
               style={{
                 display: "flex",
@@ -286,13 +367,17 @@ export default function SalonServicesPage() {
               {/* ── STEP 0: Personal + Stay ── */}
               {step === 0 && (
                 <div>
-                  <StepHeading title="Personal & Stay" subtitle="Tell us about you and your visit" />
+                  <StepHeading
+                    title="Personal & Stay"
+                    subtitle="Tell us about you and your visit"
+                  />
 
                   {/* Name + Contact */}
                   <div
                     style={{
                       display: "grid",
-                      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(240px, 1fr))",
                       gap: 20,
                       marginBottom: 28,
                     }}
@@ -309,13 +394,20 @@ export default function SalonServicesPage() {
                       error={errors.contact}
                       // note="e.g. email or phone"
                     >
-                      <Input placeholder="email or phone" value={form.contact} onChange={(v) => set("contact", v)} />
+                      <Input
+                        placeholder="email or phone"
+                        value={form.contact}
+                        onChange={(v) => set("contact", v)}
+                      />
                     </Field>
                   </div>
 
                   {/* Hotel */}
                   <div style={{ marginBottom: 24 }}>
-                    <Field label="Which hotel will you be staying at?" error={errors.hotel}>
+                    <Field
+                      label="Which hotel will you be staying at?"
+                      error={errors.hotel}
+                    >
                       <Select
                         value={form.hotel}
                         onChange={(v) => set("hotel", v)}
@@ -345,7 +437,8 @@ export default function SalonServicesPage() {
                     <div
                       style={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+                        gridTemplateColumns:
+                          "repeat(auto-fit, minmax(100px, 1fr))",
                         gap: 12,
                         marginTop: 8,
                       }}
@@ -363,7 +456,9 @@ export default function SalonServicesPage() {
                               padding: "18px 8px",
                               border: `1px solid ${ACCENT}`,
                               borderRadius: 8,
-                              backgroundColor: selected ? ACCENT : "transparent",
+                              backgroundColor: selected
+                                ? ACCENT
+                                : "transparent",
                               color: selected ? BG : ACCENT,
                               cursor: "pointer",
                               transition: "all 0.25s ease",
@@ -377,7 +472,8 @@ export default function SalonServicesPage() {
                                 : "0 1px 3px rgba(23,62,61,0.05)",
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.transform = "translateY(-2px)";
+                              e.currentTarget.style.transform =
+                                "translateY(-2px)";
                               e.currentTarget.style.boxShadow = `0 4px 10px rgba(23,62,61,0.15)`;
                             }}
                             onMouseLeave={(e) => {
@@ -420,7 +516,11 @@ export default function SalonServicesPage() {
               {/* ── STEP 1: Services ── */}
               {step === 1 && (
                 <div>
-                  <StepHeading num="02" title="Services" subtitle="Select all that apply" />
+                  <StepHeading
+                    num="02"
+                    title="Services"
+                    subtitle="Select all that apply"
+                  />
                   <Field
                     label="Nature of Service"
                     note={
@@ -440,7 +540,8 @@ export default function SalonServicesPage() {
                     <div
                       style={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                        gridTemplateColumns:
+                          "repeat(auto-fit, minmax(140px, 1fr))",
                         gap: 14,
                         marginTop: 8,
                       }}
@@ -461,7 +562,11 @@ export default function SalonServicesPage() {
               {/* ── STEP 2: Details ── */}
               {step === 2 && (
                 <div>
-                  <StepHeading num="03" title="Details" subtitle="Help us prepare the perfect look" />
+                  <StepHeading
+                    num="03"
+                    title="Details"
+                    subtitle="Help us prepare the perfect look"
+                  />
 
                   {needsHair && (
                     <div style={{ marginBottom: 32 }}>
@@ -469,7 +574,8 @@ export default function SalonServicesPage() {
                       <div
                         style={{
                           display: "grid",
-                          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                          gridTemplateColumns:
+                            "repeat(auto-fit, minmax(240px, 1fr))",
                           gap: 20,
                           marginTop: 20,
                         }}
@@ -558,14 +664,14 @@ export default function SalonServicesPage() {
                         <div
                           style={{
                             display: "grid",
-                            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                            gridTemplateColumns:
+                              "repeat(auto-fit, minmax(260px, 1fr))",
                             gap: 20,
                             alignItems: "start",
                           }}
                         >
                           <Field
                             label="Makeup Brief"
-                            
                             error={errors.makeupBrief}
                           >
                             <Textarea
@@ -635,22 +741,28 @@ export default function SalonServicesPage() {
                               setDragOver(false);
                               handleFileChange(e.dataTransfer.files);
                             }}
-                            onClick={() => document.getElementById("makeup-upload").click()}
+                            onClick={() =>
+                              document.getElementById("makeup-upload").click()
+                            }
                             style={{
                               border: `1px dashed ${ACCENT}`,
                               borderRadius: 8,
                               padding: "24px 16px",
                               textAlign: "center",
                               cursor: "pointer",
-                              backgroundColor: dragOver ? `rgba(23,62,61,0.05)` : "transparent",
+                              backgroundColor: dragOver
+                                ? `rgba(23,62,61,0.05)`
+                                : "transparent",
                               transition: "all 0.3s",
                               boxShadow: dragOver
                                 ? `0 2px 8px rgba(23,62,61,0.12)`
                                 : "0 1px 3px rgba(23,62,61,0.05)",
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.transform = "translateY(-1px)";
-                              e.currentTarget.style.boxShadow = "0 3px 12px rgba(23,62,61,0.16)";
+                              e.currentTarget.style.transform =
+                                "translateY(-1px)";
+                              e.currentTarget.style.boxShadow =
+                                "0 3px 12px rgba(23,62,61,0.16)";
                             }}
                             onMouseLeave={(e) => {
                               e.currentTarget.style.transform = "translateY(0)";
@@ -666,7 +778,11 @@ export default function SalonServicesPage() {
                               fill="none"
                               stroke={ACCENT}
                               strokeWidth="1.2"
-                              style={{ opacity: 0.4, margin: "0 auto 10px", display: "block" }}
+                              style={{
+                                opacity: 0.4,
+                                margin: "0 auto 10px",
+                                display: "block",
+                              }}
                             >
                               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                               <polyline points="17 8 12 3 7 8" />
@@ -730,7 +846,8 @@ export default function SalonServicesPage() {
                     <div
                       style={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                        gridTemplateColumns:
+                          "repeat(auto-fit, minmax(240px, 1fr))",
                         gap: 20,
                         marginTop: 20,
                       }}
@@ -785,11 +902,16 @@ export default function SalonServicesPage() {
               {/* ── STEP 3: Review ── */}
               {step === 3 && (
                 <div>
-                  <StepHeading num="04" title="Review" subtitle="Confirm your booking details" />
+                  <StepHeading
+                    num="04"
+                    title="Review"
+                    subtitle="Confirm your booking details"
+                  />
                   <div
                     style={{
                       display: "grid",
-                      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(280px, 1fr))",
                       border: `1px solid ${ACCENT}`,
                       borderRadius: 8,
                       overflow: "hidden",
@@ -802,17 +924,39 @@ export default function SalonServicesPage() {
                       ["Dates", form.dates.join(", ")],
                       ["Services", form.services.join(", ")],
                       ["Ready Time", form.readyTime],
-                      ...(needsHair ? [["Hair Length", form.hairLength], ["Hair Extensions", form.hairExtensions]] : []),
-                      ...(needsMakeup ? [["Makeup Brief", form.makeupBrief], ["Add Lashes", form.lashes]] : []),
-                      ...(form.notes ? [["Notes", form.notes], ["", ""]] : []),
+                      ...(needsHair
+                        ? [
+                            ["Hair Length", form.hairLength],
+                            ["Hair Extensions", form.hairExtensions],
+                          ]
+                        : []),
+                      ...(needsMakeup
+                        ? [
+                            ["Makeup Brief", form.makeupBrief],
+                            ["Add Lashes", form.lashes],
+                          ]
+                        : []),
+                      ...(form.notes
+                        ? [
+                            ["Notes", form.notes],
+                            ["", ""],
+                          ]
+                        : []),
                     ].map(([k, v], i) => (
                       <div
                         key={i}
                         style={{
                           padding: "14px 16px",
-                          borderBottom: i < 9 ? `1px solid rgba(23,62,61,0.12)` : "none",
-                          borderRight: i % 2 === 0 ? `1px solid rgba(23,62,61,0.12)` : "none",
-                          backgroundColor: i % 2 === 0 ? "rgba(23,62,61,0.015)" : "transparent",
+                          borderBottom:
+                            i < 9 ? `1px solid rgba(23,62,61,0.12)` : "none",
+                          borderRight:
+                            i % 2 === 0
+                              ? `1px solid rgba(23,62,61,0.12)`
+                              : "none",
+                          backgroundColor:
+                            i % 2 === 0
+                              ? "rgba(23,62,61,0.015)"
+                              : "transparent",
                         }}
                       >
                         {k && (
@@ -857,7 +1001,8 @@ export default function SalonServicesPage() {
                       padding: "0 10px",
                     }}
                   >
-                    Our salon team will confirm your appointments and reach out with any questions.
+                    Our salon team will confirm your appointments and reach out
+                    with any questions.
                   </p>
                 </div>
               )}
@@ -887,7 +1032,8 @@ export default function SalonServicesPage() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-1px)";
-                    e.currentTarget.style.boxShadow = "0 2px 6px rgba(23,62,61,0.12)";
+                    e.currentTarget.style.boxShadow =
+                      "0 2px 6px rgba(23,62,61,0.12)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
@@ -910,14 +1056,15 @@ export default function SalonServicesPage() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-1px)";
-                    e.currentTarget.style.boxShadow = "0 3px 10px rgba(23,62,61,0.2)";
+                    e.currentTarget.style.boxShadow =
+                      "0 3px 10px rgba(23,62,61,0.2)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  Continue 
+                  Continue
                 </button>
               ) : (
                 <button
@@ -932,7 +1079,8 @@ export default function SalonServicesPage() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-1px)";
-                    e.currentTarget.style.boxShadow = "0 3px 10px rgba(23,62,61,0.25)";
+                    e.currentTarget.style.boxShadow =
+                      "0 3px 10px rgba(23,62,61,0.25)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
@@ -948,6 +1096,167 @@ export default function SalonServicesPage() {
       ) : (
         <SuccessScreen name={form.fullName} />
       )}
+
+      {/* ── SALON RECOMMENDATIONS ── */}
+      <section
+        style={{
+          maxWidth: 900,
+          margin: "0 auto 72px",
+          padding: "0 16px",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* Divider */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+            marginBottom: 48,
+          }}
+        >
+          <div style={{ flex: 1, height: 1, backgroundColor: ACCENT }} />
+          <span
+            className="Font_YV"
+            style={{
+              fontSize: "clamp(16px, 1.5vw, 20px)",
+              letterSpacing: "0.45em",
+              textTransform: "uppercase",
+              // opacity: 0.4,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Recommended Salons
+          </span>
+          <div style={{ flex: 1, height: 1, backgroundColor: ACCENT }} />
+        </div>
+
+        <header
+          ref={headerRef}
+          className="pb-[10vh] "
+          style={{
+            position: "relative",
+            zIndex: 1,
+            // padding: "60px 20px 50px",
+            maxWidth: 900,
+            margin: "0 auto",
+            textAlign: "center",
+          }}
+        >
+          {/* <h2
+          className="hdr-anim Font_Q uppercase"
+          style={{
+            color: ACCENT,
+          }}
+        >
+          Salon Services
+        </h2> */}
+          <p
+            className="hdr-anim Font_YV mt-[3vw] mx-auto"
+            style={{
+              color: ACCENT,
+              lineHeight: 1.6,
+              maxWidth: 560,
+              padding: "0 10px",
+            }}
+          >
+            Whether you are looking for a quick blow-dry, professional makeup,
+            hairstyling, grooming services, or an on-location appointment at
+            your hotel, you will find a selection of trusted salons and beauty
+            professionals near Auberge, St. Regis, and Excelsior.
+          </p>
+          <p
+            className="hdr-anim Font_YV mx-auto mt-5 "
+            style={{
+              color: ACCENT,
+              lineHeight: 1.6,
+              maxWidth: 560,
+              padding: "0 10px",
+            }}
+          >
+            As appointment availability may be limited during the wedding
+            celebrations, we encourage guests to contact providers and secure
+            bookings in advance.
+          </p>
+        </header>
+
+        {SALON_GROUPS.map((group, gi) => (
+          <div key={gi} style={{ marginBottom: 52 }}>
+            {/* Group label */}
+            <div
+              style={{
+                marginBottom: 20,
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+              }}
+            >
+              <div
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  backgroundColor: ACCENT,
+                  // opacity: 0.5,
+                  flexShrink: 0,
+                }}
+              />
+              <h3
+                className="Font_YV"
+                style={{
+                  fontSize: "clamp(11px, 2vw, 13px)",
+                  letterSpacing: "0.3em",
+                  textTransform: "uppercase",
+                  margin: 0,
+                  // opacity: 0.55,
+                  fontWeight: 400,
+                }}
+              >
+                {group.label}
+              </h3>
+            </div>
+
+            {/* Salon cards grid */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+                gap: 16,
+              }}
+            >
+              {group.salons.map((salon, si) => (
+                <SalonCard key={si} salon={salon} />
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Disclaimer */}
+        <div
+          style={{
+            borderTop: `1px solid rgba(23,62,61,0.12)`,
+            paddingTop: 20,
+            marginTop: 8,
+          }}
+        >
+          <p
+            className="Font_YV"
+            style={{
+              fontSize: "clamp(12px, 1.8vw, 16px)",
+              color: ACCENT,
+              // opacity: 0.5,
+              lineHeight: 1.7,
+              margin: 0,
+              // fontStyle: "italic",
+            }}
+          >
+            Please note that all appointments are arranged directly with the
+            salon or artist and are subject to their availability, pricing, and
+            booking policies.
+          </p>
+        </div>
+      </section>
 
       <style jsx>{`
         * {
@@ -1271,10 +1580,14 @@ function RadioPill({ label, selected, onSelect, block }) {
         textAlign: block ? "left" : "center",
         border: `1px solid ${ACCENT}`,
         borderRadius: 8,
-        backgroundColor: selected ? ACCENT : hovered ? "rgba(23,62,61,0.04)" : "transparent",
+        backgroundColor: selected
+          ? ACCENT
+          : hovered
+            ? "rgba(23,62,61,0.04)"
+            : "transparent",
         color: selected ? BG : ACCENT,
         fontSize: "clamp(13px, 2.5vw, 14px)",
-        fontFamily: "'Jost', sans-serif",
+        // fontFamily: "'Jost', sans-serif",
         cursor: "pointer",
         fontWeight: selected ? 400 : 300,
         transition: "all 0.25s ease",
@@ -1345,7 +1658,11 @@ function ServiceCard({ label, selected, onToggle }) {
         gap: 12,
         border: `1px solid ${ACCENT}`,
         borderRadius: 10,
-        backgroundColor: selected ? ACCENT : hovered ? "rgba(23,62,61,0.04)" : "transparent",
+        backgroundColor: selected
+          ? ACCENT
+          : hovered
+            ? "rgba(23,62,61,0.04)"
+            : "transparent",
         color: selected ? BG : ACCENT,
         cursor: "pointer",
         transition: "all 0.3s ease",
@@ -1357,7 +1674,7 @@ function ServiceCard({ label, selected, onToggle }) {
     >
       <div
         style={{
-          opacity: selected ? 0.9 : 0.5,
+          // opacity: selected ? 0.9 : 0.5,
           transition: "opacity 0.3s",
         }}
       >
@@ -1366,7 +1683,7 @@ function ServiceCard({ label, selected, onToggle }) {
       <span
         className="Font_YV"
         style={{
-          fontSize: "clamp(11px, 2vw, 14px)",
+          fontSize: "clamp(11px, 2vw, 16px)",
           letterSpacing: "0.2em",
           textTransform: "uppercase",
           fontWeight: 400,
@@ -1387,7 +1704,7 @@ function SuccessScreen({ name }) {
       gsap.fromTo(
         ref.current,
         { scale: 0.95, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8, ease: "power3.out" }
+        { scale: 1, opacity: 1, duration: 0.8, ease: "power3.out" },
       );
     });
   }, []);
@@ -1442,7 +1759,8 @@ function SuccessScreen({ name }) {
           lineHeight: 1.2,
         }}
       >
-        All set,<br />
+        All set,
+        <br />
         {name || "dear guest"}.
       </h2>
       <p
@@ -1456,7 +1774,8 @@ function SuccessScreen({ name }) {
           padding: "0 10px",
         }}
       >
-        Your salon booking request has been received. Our team will be in touch to confirm your appointments.
+        Your salon booking request has been received. Our team will be in touch
+        to confirm your appointments.
       </p>
       {/* <div
         style={{
@@ -1503,3 +1822,169 @@ const ghostBtnStyle = {
   transition: "all 0.3s ease",
   boxShadow: "0 1px 3px rgba(23,62,61,0.08)",
 };
+
+function SalonCard({ salon }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        border: `1px solid rgba(23,62,61,${hovered ? "0.3" : "0.12"})`,
+        borderRadius: 10,
+        padding: "20px 18px",
+        transition: "all 0.25s ease",
+        backgroundColor: hovered ? "rgba(23,62,61,0.025)" : "transparent",
+        boxShadow: hovered
+          ? "0 3px 12px rgba(23,62,61,0.1)"
+          : "0 1px 3px rgba(23,62,61,0.05)",
+      }}
+    >
+      <div style={{ marginBottom: 12 }}>
+        <h4
+          className="Font_Q"
+          style={{
+            margin: "0 0 2px",
+            fontSize: "clamp(16px, 2.5vw, 19px)",
+            fontWeight: 300,
+            // fontStyle: "italic",
+            color: ACCENT,
+            lineHeight: 1.3,
+          }}
+        >
+          {salon.name}
+        </h4>
+        {salon.note && (
+          <span
+            className="Font_YV"
+            style={{
+              fontSize: "clamp(10px, 1.5vw, 11px)",
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              // opacity: 0.4,
+            }}
+          >
+            {salon.note}
+          </span>
+        )}
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+        {salon.website && (
+          <SalonLink
+            href={salon.website}
+            icon={
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            }
+            label="Website"
+          />
+        )}
+        {salon.instagram && (
+          <SalonLink
+            href={salon.instagram}
+            icon={
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            }
+            label="Instagram"
+          />
+        )}
+        {salon.email && (
+          <SalonLink
+            href={`mailto:${salon.email}`}
+            icon={
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            }
+            label={salon.email}
+          />
+        )}
+        {salon.contact && (
+          <SalonLink
+            href={`tel:${salon.contact.replace(/\s/g, "")}`}
+            icon={
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            }
+            label={`${salon.contact}${salon.contactNote ? ` (${salon.contactNote})` : ""}`}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SalonLink({ href, icon, label }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 7,
+        color: ACCENT,
+        // opacity: hovered ? 1 : 0.55,
+        textDecoration: "none",
+        transition: "opacity 0.2s",
+        fontSize: "clamp(12px, 1.8vw, 13px)",
+        // fontFamily: "'Jost', sans-serif",
+        letterSpacing: "0.04em",
+      }}
+    >
+      <span style={{ flexShrink: 0, display: "flex" }}>{icon}</span>
+      <span
+        className="Font_YV"
+        style={{
+          textDecoration: hovered ? "underline" : "none",
+          textUnderlineOffset: 3,
+          wordBreak: "break-all",
+        }}
+      >
+        {label}
+      </span>
+    </a>
+  );
+}

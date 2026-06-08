@@ -477,10 +477,7 @@ const SectionMain = () => {
             ref={textBlockRef}
             className="text-justify Font_YV text-[1.1rem] max-sm:py-10 COLOR_TEXT_RED leading-[1.2rem]"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero enim
-            delectus magni aliquid eos, qui suscipit eum, est dolorum repellat
-            ratione sapiente commodi dolores facilis officiis asperiores? Harum,
-            tempore dolores!
+           With love in our hearts, the Vadera & Kohli families request the honour of your presence at the wedding festivities of Dylan and Misha
           </span>
         </div>
       </div>

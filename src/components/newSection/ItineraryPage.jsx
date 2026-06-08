@@ -18,6 +18,9 @@ const events = [
     accent: "White",
     index: "01",
     url: `/FinalImage/VillaCorti.webp`,
+     subEvents: [
+      { time: "5:30 PM", name: "" },
+    ],
   },
   {
     date: "18 September",
@@ -28,6 +31,9 @@ const events = [
     accent: "Evening",
     index: "02",
     url: `/FinalImage/VillaPalmieri.webp`,
+     subEvents: [
+      { time: "5:00 PM", name: "" },
+    ],
   },
   {
     date: "19 September",
