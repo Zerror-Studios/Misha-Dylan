@@ -73,9 +73,9 @@ const Hearts = () => {
             <div className='w-full h-screen overflow-hidden sticky flex flex-col max-sm:hidden justify-center top-0 left-0 COLOR_BG_RED text-white uppercase'>
                 {/* 1 */}
                 <div className=' w-full innderHerartCont tlr  h-fit text-[4vw] leading-[4vw] Font_Q flex  gap-[2vw]  justify-center'>
-                    <h1 className=''>Where love</h1>
-                    <h1>meets la</h1>
-                    <h1>dolce vita</h1>
+                    <h1 className=''>Love Under</h1>
+                    <h1>The Tuscan</h1>
+                    <h1>Sun</h1>
                 </div>
                 {/* 1 */}
                 <div className=' w-full innderHerartCont2 tlr   whitespace-nowrap flex-nowrap h-fit text-[4vw] leading-[4vw] Font_Q flex gap-[1vw] justify-center'>

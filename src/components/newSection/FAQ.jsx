@@ -23,9 +23,7 @@ You may also fly into Pisa International Airport (PSA), which is about 1 hour fr
     id: 3,
     question: "How do I get from the airport to Florence?",
     answer: `Taxi from Florence Airport: -20 minutes (€25 – €35)
-Tram from Florence Airport to city centre: - 25 minutes  (€1.70)
 Private transfers: widely available and recommended for convenience
-Please contact our logistics team at __ for the same.
 `,
   },
   {
@@ -33,22 +31,6 @@ Please contact our logistics team at __ for the same.
     question: " Is Florence walkable?",
     answer:
       `Yes — Florence is one of the most walkable cities in Europe. Most landmarks, restaurants, and shopping streets are located within the historic centre and can easily be explored on foot.`,
-  },
-  {
-    id: 5,
-    question: "Will I have cell service in Italy?",
-    answer:
-      `International roaming is available but can be expensive. Many travellers prefer purchasing a local SIM card or eSIM, which can be easily arranged online or at the airport.
-Wi-Fi is widely available in hotels, cafés, and restaurants.
-`,
-  },
-  {
-    id: 6,
-    question: "Can I use foreign currency in Italy?",
-    answer:
-      `No — the local currency is the Euro (€).
-Credit and debit cards are widely accepted, but it’s helpful to carry small amounts of cash for taxis, cafés, or small shops.
-`,
   },
   {
     id: 7,
@@ -62,25 +44,12 @@ Hotel staff: €1–€2 for assistance
 `,
   },
   {
-    id: 8,
-    question: "Do I need vaccinations to travel to Italy?",
-    answer:
-      `No special vaccinations are required for travel to Italy. Standard travel health precautions are generally sufficient.`
-  },
-  {
     id: 9,
     question: " Are transportation arrangements provided for wedding venues?",
     answer:
      `Yes. Guest transportation will be arranged to and from the wedding venues from designated hotels.
 Detailed transfer schedules and pickup locations will be shared closer to the wedding dates through the wedding website and our hospitality team.
 `,
-  },
-  {
-    id: 10,
-    question: "What languages are commonly spoken in Florence?",
-    answer: `The primary language is Italian, but English is widely spoken in hotels, restaurants, and tourist areas. Learning a few simple Italian phrases like “Grazie” (thank you) is always appreciated.
-`,
-    // LINK: `https://indianvisaonline.gov.in/evisa/tvoa.html`,
   },
 ];
 
@@ -107,25 +76,18 @@ export default function FAQ() {
           </p>
           <div className=" w-fit h-fit flex sm:gap-2 mt-4 justify-center items-center max-sm:flex-col">
 
-             <a href="mailto:sonalskushie@gmail.com" >
+             <a href="mailto:dylanwedsmisha@gmail.com" >
               <div className=" relative group flex flex-col max-sm:mt-2">
-              <p className="Font_YV ">mishadylan@gmail.com</p>
+              <p className="Font_YV ">dylanwedsmisha@gmail.com</p>
               <div className="w-0 h-px bg-[#016342]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>
 
             <p className="px-2 max-sm:hidden">|</p>
 
-            <a href="tel:+919358800614">
+            <a href="tel:+919910158374">
               <div className=" relative group flex w-fit flex-col max-sm:mt-2">
-              <p className="Font_YV ">+91 93588 00614</p>
-              <div className="w-0 h-px bg-[#016342]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
-              </div>
-            </a>
-            <p className="px-2 max-sm:hidden">|</p>
-            <a href="tel:+919310069102">
-              <div className=" relative group flex w-fit flex-col">
-              <p className="Font_YV max-sm:mt-2">+91 93100 69102</p>
+              <p className="Font_YV ">+91 99101 58374</p>
               <div className="w-0 h-px bg-[#016342]  group-hover:w-full absolute bottom-[-1] left-0 transition-all duration-200"></div>
               </div>
             </a>

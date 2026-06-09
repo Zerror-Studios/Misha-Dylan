@@ -32,28 +32,12 @@ Sunglasses and sunscreen
   },
   {
     id: 4,
-    question: " Hydration",
-    answer:
-      `Florence has excellent drinking water, and many public fountains provide safe drinking water. Carrying a refillable water bottle can be very convenient while exploring the city.`,
-  },
-  {
-    id: 5,
     question: "Getting Around Florence",
     answer:
       `Walking: best way to explore the historic centre
 Taxi: -€10–€20 for most rides within the city
 Uber: limited availability (usually Uber Black)
 For short distances, walking is often faster than driving.
-
-`,
-  },
-  {
-    id: 6,
-    question: "Dining in Italy",
-    answer:
-      `Meals in Italy are typically more relaxed and leisurely than in many other countries.
-Lunch usually runs 1:00–3:00 PM, while dinner typically begins after 7:30 PM.
-Many restaurants may require reservations for dinner.
 
 `,
   },

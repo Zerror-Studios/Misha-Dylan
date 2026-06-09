@@ -11,18 +11,8 @@ const ACCENT = "#016342";
 const BG = "#F9DE85";
 
 const HERO_IMG = `/FinalImage/9.webp`;
-const VISA_IMG = "/FinalImage/20.webp";
 const TRANSPORT_IMG = "/FinalImage/41.webp";
 const HOTEL_IMG = "/FinalImage/30.webp";
-const BAGGAGE_IMG = "/FinalImage/37.webp";
-
-const sections = [
-  { id: "visa", label: "Visa" },
-  { id: "arrival", label: "Arrival" },
-  { id: "meetgreet", label: "Meet & Greet" },
-  { id: "baggage", label: "Baggage" },
-  { id: "accommodation", label: "Stay" },
-];
 
 const hotels = [
   { name: "Hotel Lungarno", url: "#" },
@@ -33,7 +23,7 @@ const hotels = [
 ];
 
 export default function Travelaccommodation() {
-  const [activeSection, setActiveSection] = useState("visa");
+  const [activeSection, setActiveSection] = useState("arrival");
   const [scrolled, setScrolled] = useState(false);
   const heroRef = useRef(null);
   const sectionRefs = useRef({});
@@ -192,76 +182,11 @@ export default function Travelaccommodation() {
 
       {/* ── MAIN CONTENT ── */}
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-        {/* ── VISA ── */}
-        <section
-          id="visa"
-          ref={(el) => (sectionRefs.current["visa"] = el)}
-          style={{ padding: "120px 0 80px" }}
-        >
-          <div
-            className="section-reveal two-col"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "60px 80px",
-              alignItems: "center",
-            }}
-          >
-            <div
-              className="col-image max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E]"
-              style={{
-                position: "relative",
-                overflow: "hidden",
-                borderRadius: 2,
-                aspectRatio: "4/5",
-              }}
-            >
-              <img
-                className="parallax-img-inner "
-                src={VISA_IMG}
-                alt="Visa & Travel Documents "
-                style={{
-                  width: "100%",
-                  height: "115%",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  display: "block",
-                }}
-              />
-            </div>
-            <div className="col-content">
-              <h2 style={h2Style} className="Font_Q uppercase">
-                Schengen
-                <br />
-                Requirements
-              </h2>
-              <ul className="stagger-list" style={listStyle}>
-                <p className="Font_YV">
-                  Italy is part of the Schengen Area — guests from certain
-                  countries may require a Schengen Visa prior to arrival.
-                </p>
-                <p className="Font_YV">
-                  You may apply up to 6 months before travel. We recommend
-                  submitting at least <strong>6–8 weeks in advance</strong> for
-                  sufficient processing time.
-                </p>
-              </ul>
-              <a
-                href="https://vistoperitalia.esteri.it/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button>Schengen Visa Portal</Button>
-              </a>
-            </div>
-          </div>
-        </section>
-
         {/* ── ARRIVAL ── */}
         <section
           id="arrival"
           ref={(el) => (sectionRefs.current["arrival"] = el)}
-          style={{ padding: "80px 0" }}
+          style={{ padding: "120px 0 80px" }}
         >
           <div
             className="section-reveal two-col two-col-reverse"
@@ -391,85 +316,6 @@ export default function Travelaccommodation() {
               ].map((ap) => (
                 <AirportCard key={ap.code} ap={ap} />
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── BAGGAGE ── */}
-        <section
-          id="baggage"
-          ref={(el) => (sectionRefs.current["baggage"] = el)}
-          style={{ padding: "80px 0" }}
-        >
-          <div
-            className="section-reveal two-col"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "60px 80px",
-              alignItems: "center",
-            }}
-          >
-            <div
-              className="col-image max-sm:border-[0.5vw] sm:border-[0.5vw] border-[#F89A8E]"
-              style={{
-                position: "relative",
-                overflow: "hidden",
-                borderRadius: 2,
-                aspectRatio: "4/5",
-              }}
-            >
-              <img
-                className="parallax-img-inner"
-                src={BAGGAGE_IMG}
-                alt="Luggage"
-                style={{
-                  width: "100%",
-                  height: "115%",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  display: "block",
-                }}
-              />
-            </div>
-            <div className="col-content">
-              <h2 className="Font_Q" style={h2Style}>
-                Weight
-                <br />
-                Allowances
-              </h2>
-              <div
-                className="Font_YV text-[16px]"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 16,
-                  marginTop: 8,
-                }}
-              >
-                {[
-                  {
-                    route: "USA → Europe",
-                    note: "2 checked bags · 23 kg (50 lb) each",
-                  },
-                  {
-                    route: "UK → Europe",
-                    note: "1–2 checked bags · 23 kg each",
-                  },
-                  {
-                    route: "UAE → Europe",
-                    note: "20–30 kg total depending on fare",
-                  },
-                  { route: "India → Europe", note: "23 kg per bag · 1–2 bags" },
-                ].map((r) => (
-                  <BaggageRow key={r.route} route={r.route} note={r.note} />
-                ))}
-              </div>
-              <p className="Font_Q" style={{ ...bodyStyle, marginTop: 24 }}>
-                Most airlines allow 1 cabin bag of approx. 7–10 kg carry-on.
-                Confirm exact allowance directly with your airline prior to
-                travel.
-              </p>
             </div>
           </div>
         </section>
@@ -645,13 +491,6 @@ export default function Travelaccommodation() {
           .hotels-grid {
             grid-template-columns: 1fr 1fr !important;
           }
-
-          /* Baggage rows — allow wrapping */
-          .baggage-row-inner {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            gap: 4px !important;
-          }
         }
 
         @media (max-width: 480px) {
@@ -671,46 +510,6 @@ export default function Travelaccommodation() {
 }
 
 // ── SMALL COMPONENTS ──────────────────────────────────────────────────────────
-
-function Button({ children, href }) {
-  const [hovered, setHovered] = useState(false);
-  const el = (
-    <span
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="Font_Q"
-      style={{
-        display: "inline-block",
-        marginTop: 28,
-        padding: "12px 28px",
-        // border: `1px solid ${ACCENT}`,
-        fontSize: 16,
-        letterSpacing: "0.25em",
-        textTransform: "uppercase",
-        // color: BG,
-        backgroundColor: hovered ? ACCENT : "transparent",
-        color: hovered ? BG : ACCENT ,
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-        textDecoration: "none",
-      }}
-    >
-      {children}
-    </span>
-  );
-  if (href)
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ textDecoration: "none" }}
-      >
-        {el}
-      </a>
-    );
-  return el;
-}
 
 function AirportCard({ ap }) {
   const [hovered, setHovered] = useState(false);
@@ -770,49 +569,6 @@ function AirportCard({ ap }) {
         </span>
       </div>
     </a>
-  );
-}
-
-function BaggageRow({ route, note }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        padding: "14px 0",
-        borderBottom: `1px solid rgba(197,61,46,0.1)`,
-        transition: "border-color 0.3s",
-      }}
-    >
-      <div
-        className="baggage-row-inner"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 12,
-        }}
-      >
-        <span
-          className="Font_YV"
-          style={{ fontSize: 16, color: ACCENT, flexShrink: 0 }}
-        >
-          {route}
-        </span>
-        <span
-          className="Font_YV"
-          style={{
-            fontSize: 16,
-            color: ACCENT,
-            textAlign: "right",
-            fontWeight: 300,
-          }}
-        >
-          {note}
-        </span>
-      </div>
-    </div>
   );
 }
 
