@@ -31,7 +31,7 @@ const SALON_GROUPS = [
     salons: [
       {
         name: "Giulia Papke Make-Up",
-        instagram: "https://www.instagram.com/giuliapapke_makeupartist/",
+        // instagram: "https://www.instagram.com/giuliapapke_makeupartist/",
         website: "https://www.giuliapapke.it/",
         email: "giulia.papke@gmail.com",
       },
@@ -54,7 +54,7 @@ const SALON_GROUPS = [
     salons: [
       {
         name: "Wave Salon Firenze",
-        instagram: "https://www.instagram.com/wave_parrucchierifirenze/",
+        // instagram: "https://www.instagram.com/wave_parrucchierifirenze/",
         website: "https://www.parrucchieriwavefirenze.com/en-gb",
         contact: "+39 055 265 4650",
       },
@@ -65,25 +65,30 @@ const SALON_GROUPS = [
       },
       {
         name: "Pistolesi Group",
-        instagram: "https://www.instagram.com/pistolesigroupofficial/",
+        // instagram: "https://www.instagram.com/pistolesigroupofficial/",
         website: "https://www.pistolesigroup.it/en/",
         contact: "334 2449019",
       },
     ],
   },
   {
-    label: "Near The Westin Excelsior, Florence",
+    label: "near Hotel Excelsior, Florence: ",
     salons: [
       {
-        name: "Wave Salon Firenze",
-        instagram: "https://www.instagram.com/wave_parrucchierifirenze/",
-        website: "https://www.parrucchieriwavefirenze.com/en-gb",
-        contact: "+39 055 265 4650",
+        name: "Fabio Colucci – The House of Hair",
+        instagram: "https://www.instagram.com/fc_thehouseofhair_/?utm_source=chatgpt.com",
+        // website: "https://www.parrucchieriwavefirenze.com/en-gb",
+        contact: "+39 055 267 0519",
       },
       {
-        name: "Elenora Gentile Luxury Hair Spa",
-        website: "https://www.eleonoragentile.com/en/",
-        contact: "+39 055 051 6047",
+        name: "Platinum Beauty Studio",
+        instagram: " https://www.instagram.com/studioplatinumbeauty",
+        contact: " +39 344 340 0707",
+      },
+      {
+        name: "Wave Salon Firenze ",
+        website: "  https://www.parrucchieriwavefirenze.com/en-gb",
+        contact: " +39 055 265 4650",
       },
     ],
   },
