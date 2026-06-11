@@ -13,11 +13,11 @@ const galleryData = {
       row: "row-span-2",
     },
 
-    {
-      img: "/FinalImage/white/1.webp",
-      col: "col-span-2",
-      row: "row-span-4",
-    },
+    // {
+    //   img: "/FinalImage/white/1.webp",
+    //   col: "col-span-2",
+    //   row: "row-span-4",
+    // },
 
     {
       img: "/FinalImage/white/2.webp",
@@ -37,30 +37,33 @@ const galleryData = {
       row: "row-span-3",
     },
 
-    {
-      img: "/FinalImage/white/5.webp",
-      col: "col-span-1",
-      row: "row-span-2",
-    },
+    // {
+    //   img: "/FinalImage/white/5.webp",
+    //   col: "col-span-1",
+    //   row: "row-span-2",
+    // },
 
     {
       img: "/FinalImage/white/B1.jpg",
       col: "col-span-2",
       row: "row-span-4",
     },
+   
+    
 
     {
       img: "/FinalImage/white/B2.jpg",
       col: "col-span-1",
       row: "row-span-2",
     },
+   
 
     {
       img: "/FinalImage/white/B3.jpg",
       col: "col-span-1",
       row: "row-span-3",
     },
-    {
+      {
       type: "label",
       text: "Dress Code: Black Tie",
       col: "col-span-2 lg:col-span-1",
@@ -359,7 +362,7 @@ export default function Page() {
               {item.type === "label" ? (
                 <div className="py-10 flex items-center justify-center">
                   <p
-                    className="
+                    className={`
                 text-[1.8rem]
                 text-center
                 Font_Q
@@ -367,7 +370,7 @@ export default function Page() {
                 text-[#416160]
                 leading-none
                 px-4
-              "
+              `}
                   >
                     {item.text}
                   </p>
@@ -376,12 +379,12 @@ export default function Page() {
                 <img
                   src={item.img}
                   alt=""
-                  className="
+                  className={`
               w-full
               h-[420px]
               object-cover
               object-top
-            "
+            `}
                 />
               )}
             </div>
@@ -390,7 +393,7 @@ export default function Page() {
 
         {/* DESKTOP / TABLET LAYOUT */}
         <div
-          className="
+          className={`
       hidden
       md:grid
       grid-cols-4
@@ -398,7 +401,7 @@ export default function Page() {
       auto-rows-[8rem]
       lg:auto-rows-[9rem]
       gap-2
-    "
+    `}
         >
           {galleryData[active].map((item, index) => (
             <div
@@ -412,7 +415,7 @@ export default function Page() {
               {item.type === "label" ? (
                 <div className="w-full h-full flex items-center justify-center">
                   <p
-                    className="
+                    className={`
                 text-[2rem]
                 text-center
                 Font_Q
@@ -420,7 +423,7 @@ export default function Page() {
                 text-[#416160]
                 leading-none
                 px-8
-              "
+              `}
                   >
                     {item.text}
                   </p>
@@ -430,7 +433,7 @@ export default function Page() {
                   <img
                     src={item.img}
                     alt=""
-                    className="
+                    className={`
                 w-full
                 h-full
                 object-cover
@@ -438,7 +441,7 @@ export default function Page() {
                 transition-transform
                 duration-700
                 group-hover:scale-105
-              "
+              `}
                   />
                 </div>
               )}
